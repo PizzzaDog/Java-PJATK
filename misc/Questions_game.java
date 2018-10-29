@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Questions_game {
     public static void main(String[] args) {
-        Scanner sсan = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
         String letter = " ";
         double max = 1000000;
         double mid = max / 2;
@@ -12,9 +12,9 @@ public class Questions_game {
             System.out.println(" Is this n " + mid + "?");
             tr++;
             letter = scan.next();
-            if (letter.equals("s")) {
+            if (letter.equals("b")) {
                 min = mid;
-            } else if (letter.equals("b")) {
+            } else if (letter.equals("s")) {
                 max = mid;
             }
             mid = (min + max) / 2;
