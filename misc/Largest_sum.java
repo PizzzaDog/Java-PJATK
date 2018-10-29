@@ -10,8 +10,10 @@ public class Largest_sum {
         int max = 0;
         int lastN = 0;
         int maxLast = 0;
+        int copy;
         while (n != 0) {
-            while (n >= 10) {
+            copy = n;
+            while (n > 10) {
                 curDig = n % 10;
                 max = max + curDig;
                 n = (n - curDig) / 10;
@@ -19,10 +21,14 @@ public class Largest_sum {
                  maxLast = max + n;
             if (maxLast > maxVal) {
                 maxVal = maxLast;
+                lastN = copy;
             }
+            max=0;
+                System.out.println(maxVal);
+                System.out.println(maxLast);
             n = sc.nextInt();
         }
-        System.out.println("Max sum of digits was " + maxVal + "for ");
+        System.out.println("Max sum of digits was " + maxVal + " for " + lastN);
 
         sc.close();
     }
