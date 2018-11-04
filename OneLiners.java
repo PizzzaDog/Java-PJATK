@@ -6,6 +6,7 @@ public class OneLiners {
             n = true;
         }
         return n;
+        // return a!=0 && (b*b - 4*a*c)>0;
     }
 
     public static boolean monot(double a, double b, double c) {
@@ -14,12 +15,14 @@ public class OneLiners {
             k = true;
         }
         return k;
+        //return (a>b && b>c) || (a<b && b<c);
     }
 
     public static double maxEl(double a, double b, double c) {
         double s = a>=b ? a : b;
         s = s>=c ? s : c;
         return s;
+        //return a<b ?(b<c?c:b):(a<c?c:a)
     }
 
     public static int numPos(double a, double b, double c) {
@@ -32,6 +35,7 @@ public class OneLiners {
             }
         }
         return n;
+        // return (a>0 ?1:0) + (b<0?1:0) + (c>0?1:0);
    }
 
     public static void main(String[] args) {
