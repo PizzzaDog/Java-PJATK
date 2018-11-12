@@ -1,9 +1,15 @@
 public class Index {
     public static void main(String[] args) {
-        int[][] arr = { { 1, 3, 2 },
-                        { 3, 4, 8 },
-                        { 2, 6, 8 },
-                        { 1, 8, 5 } };
+        int[][] arr = {
+            { 1, 3, 2 },
+            { 3, 4, 8 },
+            { 2, 6, 8 },
+            { 1, 8, 5 }
+        };
+        index(arr);
+    }
+
+    public static void index (int[][] arr){
         int row = 0;
         int col = 0;
         int mid = 0;
