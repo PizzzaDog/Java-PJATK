@@ -19,7 +19,7 @@ public class Index {
         int column = 0;
 
         for (i = 0; i < arr.length; i++) {
-            for (int k = 0; k < arr[k].length; k++) {
+            for (int k = 0; k < arr[i].length; k++) {
                 mid += arr[i][k];
               //  System.out.println("mid" + mid);
             }
