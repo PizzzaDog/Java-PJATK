@@ -1,7 +1,7 @@
 public class FindMiss {
 
     public static void main(String[] args) {
-        int[] arr = { 4,3,4,3,6,7,4,8,2,9 };
+        int[] arr = { 2,3,4,3,6,7,4,8,2,9 };
         int[] brr = { 2,3,6,8,1,5 };
 
         L: for (int i = 0; i < arr.length; i++) {
