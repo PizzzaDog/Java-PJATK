@@ -7,7 +7,7 @@ public class Task6 {
 
         for(int[] a : arr){
             for(int i = 0; i < arr.length; i++) {
-                a[i] = rand.nextInt(3);
+                a[i] = rand.nextInt(11);
             }
         }
         System.out.println("Array:");

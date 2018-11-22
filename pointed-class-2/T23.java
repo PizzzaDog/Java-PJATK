@@ -18,6 +18,6 @@ public class T23{
         s = ( (a + b + c)/2 );
         System.out.print(s);
         double area = Math.sqrt( s*(s-a)*(s-b)*(s-c) );
-
+        
     }
 }

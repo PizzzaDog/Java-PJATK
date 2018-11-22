@@ -5,7 +5,7 @@ public class RecIter{
         if(n >= 0 && n < 2) {
             return n;
         }
-          else{
+          else {
             return fiboR(n - 1) + fiboR(n - 2);
         }
     }
@@ -14,7 +14,7 @@ public class RecIter{
         if(n >= 0 && n < 2) {
             return n;
         }
-          else{
+          else { 
           
           int a = 1;
           int b = 2;
@@ -62,7 +62,7 @@ public class RecIter{
     //
     public static int gcdI(int a, int b) {
         while(a>0){
-            if (a==b){
+            if (a==b) {
                 return a;
             }
         else if (a<b){
@@ -123,6 +123,10 @@ public class RecIter{
         }
         return arr;
     }
+
+   // public static void reserve(int[] arr, int from, int to){}
+
+
     //
     public boolean isPalindrom(String s) {
     int length = s.length();
@@ -130,7 +134,7 @@ public class RecIter{
         return true;
     }
     else {
-       
+
         if (s.charAt(0) != s.charAt(length - 1)) {
             return false;
         }
@@ -138,6 +142,5 @@ public class RecIter{
             return isPalindrom(s.substring(1, length - 1));
         }    
     }
-
     }
 }

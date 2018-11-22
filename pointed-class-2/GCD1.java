@@ -7,8 +7,8 @@ public class GCD1{
         int ranVal1 = r.nextInt(100);
         int ranVal2 = r.nextInt(100);
         int w = gcd(ranVal1, ranVal2);
-        System.out.println("ranVal1 " + ranVal1);
-        System.out.println("ranVal2 " + ranVal2);
+       // System.out.println("ranVal1 " + ranVal1);
+        //System.out.println("ranVal2 " + ranVal2);
         System.out.println(w);
 
         }
