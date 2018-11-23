@@ -6,8 +6,8 @@ public
 	int a = scan.nextInt();
 	int b = scan.nextInt();
 	int c = scan.nextInt();
-	int mid = (a>b)? b:a;
-    mid = (mid>c)? mid:c;
+	int mid = (a > b) ? b : a;
+    mid = (mid > c) ? mid : c;
     System.out.println(mid);
 	scan.close();
 	}

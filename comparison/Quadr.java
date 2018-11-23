@@ -10,14 +10,14 @@ public class Quadr{
         int a = Integer.parseInt(s1);
         int b = Integer.parseInt(s2);
         int c = Integer.parseInt(s3);
+        if(a=0){
+        }
         d = b*b - 4*a*c;
-        if( d>=0){
+        if( d >= 0){
             x1 = (-b + Math.sqrt(d))/ 2*a;
             x2 = (-b - Math.sqrt(d))/ 2*a;
-            JOptionPane.showMessageDialog(null, x1+" "+x2);
-        }else
+            JOptionPane.showMessageDialog(null, x1 + " " + x2);
+        } else
         JOptionPane.showMessageDialog(null, "There are no roots ");
-
-
     }
 }

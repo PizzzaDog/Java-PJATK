@@ -7,7 +7,7 @@ public class Triangle {
         int b = sc.nextInt();
         int c = sc.nextInt();
 
-        if ((a+b>c) || (a+c>b) || (b+c>a)) {
+        if ((a + b >c) || ( a + c > b) || (b + c > a)) {
             System.out.println("OK");
         } else
             System.out.println("NOT OK");

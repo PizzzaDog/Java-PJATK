@@ -17,14 +17,19 @@ public class PPJ_083 {
 
         caller_t1<<=(check(caller,17));
         caller_t1>>>=(check(caller,17));
+
         caller_zone_t1<<=(check(caller_zone,7));
         caller_zone_t1>>>=(check(caller_zone,7));
+        
         callee_t1<<=(check(callee,17));
         callee_t1>>>=(check(callee,17));
+        
         callee_zone_t1<<=(check(callee_zone,7));
         callee_zone_t1>>>=(check(callee_zone,7));
+        
         duration_t1<<=(check(duration,13));
         duration_t1>>>=(check(duration,13));
+        
         tariff_t1<<=(check(tariff,3));
         tariff_t1>>>=(check(tariff,3));
 

@@ -9,8 +9,9 @@ public class Equality {
 
         if ((a == b && a != c) || (a == c && a != b) || (b == c && a != b)) {
             System.out.println("OK");
-        } else
+        } else {
             System.out.println("NOT OK");
+        }
         sc.close();
     }
 }
