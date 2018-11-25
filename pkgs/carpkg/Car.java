@@ -15,10 +15,4 @@ public class Car{
     public int getPrice(){
         return price;
     }
-    @Override
-    public String toString() {
-        for (Cars car : Cars[]) {
-            return "car "+make+"price: "+price;  
-        }
-    }
 }

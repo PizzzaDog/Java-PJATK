@@ -17,7 +17,7 @@ public class Person{
 
     public static Car[] getCars(Person[] arr){
         Car[] brr = new Car [arr.length];
-        for(int i= 0; i< arr.length; i++){
+        for(int i = 0; i < arr.length; i++){
             brr[i] = arr[i].carGet();
         }
         return brr;
@@ -41,6 +41,6 @@ public class Person{
     }
     @Override
     public String toString() {
-        return "Car name: " + name + " " +"car type: " + car; 
+        return "Car name: " + carGet().getMake() + " " + "car price: " + carGet().getPrice() ; 
     }
 }

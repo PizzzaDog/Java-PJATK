@@ -8,7 +8,16 @@ public class CarPerson{
         Person p2 = new Person("alice1", c2);
         Person[] prs = {p1,p2};
 
-        System.out.println(Person.getCars(prs));
-        System.out.println(Person.expensiveCars(prs, 2500));
+        for(Car g : Person.getCars(prs)){
+            System.out.print("Car model:" + g.getMake() + " ");
+            System.out.print("Car price:" + g.getPrice() + "\n");
+        }
+        for(Car p : Person.expensiveCars(prs, 2500)){
+            if (p != null){
+                System.out.println("Expensive cars");
+                System.out.print("Car model:" + p.getMake() + " ");
+                System.out.print("Car price:" + p.getPrice());
+            }
+        }
     }
 }
