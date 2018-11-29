@@ -1,6 +1,7 @@
-for (int k = 0; k < arr.length; k++) {
+/*for (int k = 0; k < arr.length; k++) {
 	System.out.println(arr[k]);
-}import java.util.Scanner;
+}*/
+import java.util.Scanner;
 public
 	class Problem32{
 		public static void main(String[]args){
@@ -9,7 +10,7 @@ public
 			int n =sc.nextInt();
 			sc.close();
 
-			for(int ver=1 ,sp=0;ver<=n; ver+=2,sp++){
+			for(int ver = 1 ,sp = 0; ver <= n; ver+=2,sp++){
 				for(int i=1; i<=sp; i++){
 					System.out.print(" ");
 				}
