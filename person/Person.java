@@ -21,28 +21,24 @@ public class Person{
     }
 
     public boolean isFemale(){
-        if (name.charAt(name.length() - 1) == 'a') {
-            return true;
-        }
-        else return false;
+        return (name.charAt(name.length() - 1) == 'a') ? true : false;
     }
 
-    public static Person getOlder(Person a, Person b){
-        int c = a.getBirthYear();
-        int h = b.getBirthYear();
-        if(c < h){
-            return a;
-        } else {
-            return b;
-        }
+    public static Person getOlder(Person a, Person b) {
+        return (a.getBirthYear() < b.getBirthYear()) ? a : b;
     }
 
-    public static Person getOldest(Person[] arr){
-        Person max = null; 
-        for( int i = 0; i < arr.length - 1; i++){
-            if(arr[i].getBirthYear() > arr[i+1].getBirthYear()){
+    public static Person getOldest(Person[] arr) {
+        if(arr == null || arr.length <= 0) {
+            return null;
+        }
+        Person max = arr[0]; 
+        for( int i = 0; i < arr.length - 1; i++) {
+            /*if(arr[i].getBirthYear() > arr[i+1].getBirthYear()){
                 max = arr[i+1];
-            } 
+
+        } */
+            max = getOlder(max, arr[i]);
         }
         return max;
     }
@@ -66,10 +62,11 @@ public class Person{
             return null;
         } 
     }
-       @Override
-       public String toString() {
-           return name + " " + year;
-       }
+
+    @Override
+    public String toString() {
+        return name + " " + year;
     }
+}
 
 
