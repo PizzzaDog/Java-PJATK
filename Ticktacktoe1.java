@@ -1,10 +1,14 @@
 import java.util.Scanner;
-public class Ticktacktoe{
+public class Ticktacktoe1{
     public static void main(String[] args){
-        int game = 0b0_0000_0100_0_0100_0100;
+        int game = 0b0_0000_0000_0_0000_0000;
         boolean play = true;  
-        int x = 0;
+        
+        int count = 0;
+        int pos = 0;
+        Scanner scan = new Scanner(System.in);
         while(play){
+            int x = 0;
             for(int i = 0; i < 5; i++){
                 if((i % 2) != 0){
                     System.out.println("---------");
@@ -30,8 +34,24 @@ public class Ticktacktoe{
                     
                 } 
                 
-            }        
-        play = false;
+            } 
+           
+            if ((game & 0b1_1111_1111) == 0b1_1111_1111){ 
+                play = false;
+            } else {
+                pos = scan.nextInt();
+            game += (1 << (pos-1));
+            if((count % 2) == 0){
+                game += (1 << (pos+8));
+            }
+            //System.out.println(game);
+            count++;
+            }
+        
         }
+
+        
+
+    
     }
 }

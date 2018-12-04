@@ -16,13 +16,13 @@ public
 				System.out.println("GCD = "+ a);
 					break;
 			}
-			else if (a<b){
-				c=a;
-				a=b;
-				b=c;
+			else if (a < b){
+				c = a;
+				a = b;
+				b = c;
 			}
 				else{
-					a=a-b;
+					a = a-b;
 				}
 				}
 			}
