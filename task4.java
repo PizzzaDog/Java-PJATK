@@ -102,4 +102,21 @@ public class Frac {
     public String toString() {
         return num + "/" + denom;
     }
+
+    @Override
+    public boolean equals(Frac f) {
+        if (num == f.num && denom == f.denom){//if hashcode1 == hashcode2 retun true
+            return true;
+        } else {
+        return false;
+    }
+    }
+
+    @Override
+    public int hashcode() {
+        return 
+        //object.hashcode();
+    }
+
+    
 }
