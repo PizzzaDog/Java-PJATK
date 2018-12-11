@@ -12,10 +12,13 @@ public class StringCmp {
         if(a.length() < b.length()){
             return true;
         } else if(a.length() == b.length()){
-            int cmp = a.compareTo(b);
+            return a.compareTo(b)<0;
+            /*int cmp = a.compareTo(b);
+            
             if(cmp < 0) {
                 return true;
             } return false;
+            */
         } return false;
     }
     public static String[] sortSel(String[] arr){
