@@ -1,5 +1,5 @@
 import java.io.*;
-public class Display{
+public class Display {
 
     public static void main(String[] args){
        try{
