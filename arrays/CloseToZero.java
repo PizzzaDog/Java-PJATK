@@ -1,5 +1,6 @@
 import java.util.*;
 public class CloseToZero{
+    //sum of two min values in random array
     public static void main(String[] args){
 
         Random rnd = new Random();

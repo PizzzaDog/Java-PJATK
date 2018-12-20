@@ -1,4 +1,5 @@
 public class AstArr {
+    //print astr according to values in array
     public static void main(String[] args) {
         int[] arr = { 1, 100, 8, 99 };
         int max = 0;

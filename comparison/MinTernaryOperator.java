@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public
-	class Comparison{
+	class MinTernaryOperator{
 	public static void main (String[]args){
 	Scanner scan= new Scanner(System.in);
 	int a = scan.nextInt();

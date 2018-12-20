@@ -124,7 +124,6 @@ public class Password {
                 System.out.println("No uppercase letter");
                 ex = true;
             }
-
             try {
                 if(!lower){
                     throw new Exception();

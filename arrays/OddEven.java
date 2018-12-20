@@ -1,5 +1,7 @@
 import java.util.*;
 public class OddEven {
+    //check if the value is odd or even 
+    //flip the fisrt odd with last even
     public static void main(String[] args) {
 
         Random rnd = new Random();

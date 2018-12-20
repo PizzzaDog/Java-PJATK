@@ -1,4 +1,5 @@
 public class Rot{
+    //shift array to the left
     public static void main(String[] args){
         int[] arr = { 2, 7, 3, 9, 5 ,6,3};
         //int last = arr[0];

@@ -1,5 +1,5 @@
 public class FindMiss {
-
+//print the values of the first array which are missed in the second
     public static void main(String[] args) {
         int[] arr = { 2,3,4,3,6,7,4,8,2,9 };
         int[] brr = { 2,3,6,8,1,5 };

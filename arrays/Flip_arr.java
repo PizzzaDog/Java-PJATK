@@ -1,4 +1,5 @@
 public class Flip_arr {
+    //flip array
     public static void main(String[] args) {
         int[] arr = { 1, 2, 3 };
         int i;
