@@ -3,7 +3,7 @@ public class Display {
 
     public static void main(String[] args){
        try{
-           FileInputStream fis = new FileInputStream("/Users/alice/Coding/Java/Ala.txt");// path
+           FileInputStream fis = new FileInputStream("/Users/alice/Coding/Java/RPN.txt");// path
            int wrt = fis.read();
            String a ="";
            while(wrt!= -1){
