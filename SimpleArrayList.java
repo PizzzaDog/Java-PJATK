@@ -122,5 +122,4 @@ public class SimpleArrayList{
     public String toString(){
         return "Cap="+cap+", size="+size+": "+Arrays.toString(arr);
     }
-
 }

@@ -32,5 +32,6 @@ public class Keyword{
         }catch(IOException ex){
             System.out.println(ex);
         }
+        fis.close();
     }
 }
