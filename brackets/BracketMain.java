@@ -4,11 +4,10 @@ public class BracketMain{
     public static void main(String[] args){
         boolean ok = true;
         ParenStack stack = new ParenStack();
+        
         try{
             FileInputStream a = new FileInputStream("/Users/alice/Coding/Java/RPN.txt");
             int in;
-
-           
 
             while((in = a.read())!= -1){ // 'in' is the read char, 'out' is the poped
                 BufferedReader reader = new BufferedReader(new FileReader("/Users/alice/Coding/Java/RPN.txt"));
@@ -45,9 +44,7 @@ public class BracketMain{
                         }
                     } 
                 }
-
-                reader.close();
-                
+                reader.close(); 
             }
             
         }catch(FileNotFoundException ex){
@@ -57,7 +54,6 @@ public class BracketMain{
             System.out.println(ex);
             ok=false;
         }catch(ErrorEx ex){
-            //System.out.println(ex);
             ok = false;
         }
 
