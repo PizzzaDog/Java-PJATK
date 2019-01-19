@@ -7,7 +7,6 @@ public class Dragon{
             String a ="";
             while(wrt!= -1){
                 a+=(char)wrt;
-                //System.out.println((char)wrt);
                 wrt = fis.read();
             }
             System.out.println(a);
