@@ -18,6 +18,7 @@ public class Rocket {
     public void launch() throws Exception{   
            if(fuelWeight <= 1000){
             throw new Exception();
+            
     }
 }
 }
