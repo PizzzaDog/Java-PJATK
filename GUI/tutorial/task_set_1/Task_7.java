@@ -8,21 +8,24 @@ public class Task_7 {
         Scanner scan = null;
         try {
             file = new File("/Users/alice/Coding/Java/GUI/tutorial/task_set_1/A.txt");
-            f = new FileWriter("out.txt");
+            f = new FileWriter("out.txt", true);
             scan = new Scanner(file);
-        } catch (Exception e) {
+        } catch(IOException e) {
             System.out.println(e);
         }
+        
         boolean x = true;
         while(x){
             if (scan.hasNextInt() && scan.hasNextInt()){
+                int k = scan.nextInt();
+                int l = scan.nextInt();
                 try {
-                    f.write(scan.nextInt()+scan.nextInt());
-                    f.write("test string");
+                    f.write(Integer.toString(k+l));
+                    f.write('\n');
                 } catch(IOException e) {
                     System.out.println(e);
                 }
-                //System.out.println(a+b);
+                System.out.println(k+l);
 
             }else if (scan.hasNextDouble() || scan.hasNextDouble()){
                 try {
@@ -34,6 +37,11 @@ public class Task_7 {
             }else {
                 x = false;
             }
+        }
+        try {
+            f.close();
+        } catch (Exception e) {
+            System.out.print(e);
         }
 
 

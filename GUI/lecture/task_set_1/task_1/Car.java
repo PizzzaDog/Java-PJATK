@@ -10,7 +10,7 @@ public class Car {
     }
 
     public Car(String make, int price){
-        this(make, price, null)
+        this(make, price, null);
     }
 
     public String getMake(){
@@ -21,20 +21,30 @@ public class Car {
         return price;
     }
 
+
     public Car getNext() {
         return next;
     }
 
     public void showCars(){
-        System.out.print(this);
-        while(next!= null){
-            System.out.print(next);
+        Car c = this;
+        System.out.print(c + " ");
+        while(c.next != null){
+            System.out.print(c.next + " ");
+            c = c.next;
         }
         
     }
+   
 
     public void showCarsRev() {
+        if(this!= null){
+            Car tmp = this;
+            tmp = tmp.next;
+            showCarsRev();
+        }
 
+        System.out.println(this);
     }
 
     

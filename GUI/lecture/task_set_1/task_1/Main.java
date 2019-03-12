@@ -13,11 +13,13 @@ public class Main {
         System.out.println("Total price of " +
                 john.getName() + "'s cars: " +
                 john.getTotalPrice());
-        System.out.println("Does " + john.getName() +
+       System.out.println("Does " + john.getName() +
                 " have a ford? " + john.hasCar("ford"));
         System.out.println("Does " + john.getName() +
                 " have a bmw?  " + john.hasCar("bmw"));
         System.out.println(john.getName() + "'s most " +
                 "expensive car is " + john.mostExpensive());
+    
+
     }
 }

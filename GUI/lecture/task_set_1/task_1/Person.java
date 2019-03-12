@@ -9,18 +9,8 @@ public class Person {
     }
 
     public Person buys(String make, int price){
-        if(cars == null){
-            cars = new Car(make, price);
-        }else {
-            Car tmp = cars;
-            while(tmp.getNext() != null){
-                tmp = tmp.getNext();
-                tmp.getNext();
-            }
-            
-        }
-        
-        return this;
+       cars = new Car(make, price, cars);
+       return this;
     }
 
     public String getName(){
@@ -32,14 +22,15 @@ public class Person {
     }
 
     public void showCarsRev() {
-
+        this.cars.showCarsRev();
     }
 
     public int getTotalPrice() {
         int tot = 0;
-        while(cars.getNext() != null){
-            tot += cars.getPrice();
-            cars = cars.getNext();
+        Car t = cars;
+        while(t != null) {
+            tot += t.getPrice();
+            t = t.getNext();
         }
         return tot;
 
@@ -47,10 +38,13 @@ public class Person {
 
     public boolean hasCar(String make) {
         boolean has = false;
-        while(cars.getNext() != null){
-            if(cars.getMake().equals(make)){
+        Car t = cars;
+        while(t != null){
+            if(make.equals(t.getMake().toLowerCase())){
                 has = true;
             }
+
+            t = t.getNext();
         }
         return has;
     }
