@@ -14,6 +14,5 @@ public class Main {
         );
         System.out.println(FunDD.xminim(
         (x) -> x*x*(x-2) , 0, 2));
-        
     } 
 }
