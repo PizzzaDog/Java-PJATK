@@ -1,4 +1,7 @@
 abstract public class Figure {
-    private double area;
-    private double perimeter;
+    public double area;
+    public double perimeter;
+
+    abstract public double findPer();
+    abstract public double findAr(); 
 } 
