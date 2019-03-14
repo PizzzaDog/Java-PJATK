@@ -1,23 +1,32 @@
 import java.lang.Math;
-public class Square implements Comparable<Square> {
+public class Square implements Comparable<Square>, Figure {
     private static int counter = 1; 
     private int length;
     private int number;
 
-    public Square(int l){
-        length = l;
-        number = counter;
-        counter++;
+    public Square(int l) throws TooBigSquareException{
+        if(l > Max){
+            throw new TooBigSquareException("Maximum length is "+ Max);
+        }else{
+            length = l;
+            number = counter;
+            counter++;
+        }
+        
     }
 
-    public double getArea(){
-        return Math.pow(length, 2);
+    public int getArea(){
+        return length*length;
+    }
+
+    public int getPerimeter(){
+        return length*4;
     }
 
 
     @Override
     public int compareTo(Square s) {
-        double diff = getArea() - s.getArea();
+        int diff = getArea() - s.getArea();
         if (diff < 0) {
             return -1;
         }else if (diff > 0){
