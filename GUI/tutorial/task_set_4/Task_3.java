@@ -18,9 +18,12 @@ class AddingThread extends Thread {
 
 class Counter {
     public int x = 0;
-    synchronized  void inc(int value) {
+    void inc(int value) {
+        synchronized (this){
+            
         int sum = x + value;
         x = sum;
+        }
     }
     public String toString() {
         return x + "";
