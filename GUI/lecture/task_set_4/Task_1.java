@@ -1,5 +1,4 @@
 import java.util.TreeSet;
-
 import java.util.Scanner;
 import java.util.HashSet;
 import java.util.Set;
@@ -75,14 +74,21 @@ public class Task_1 {
                     count++;
                 }
             }
-
-            if (count != 0){
-                throw new NumberFormatException(); 
-            }else {
-                y =  Integer.parseInt(tmp);
-            }
             
-            list.add(new Person(name, y));
+            try {
+                if (count != 0){
+                    throw new NumberFormatException(); 
+                    
+                }else {
+                    y =  Integer.parseInt(tmp);
+                }
+
+                list.add(new Person(name, y));
+            
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+            count =0;
             name = scan.next();
         }
 
@@ -114,7 +120,5 @@ public class Task_1 {
         }
 
         System.out.println(Person.findInColl(trSet, "alice", 2000));
-
     }
-
 }
