@@ -27,9 +27,6 @@ public class Task_1 {
             System.out.println("\nthread nieparzyste: " + (after - before));
         });
         thread0.start();
-        thread1.start();
-
-    
-        
+        thread1.start();    
     }
 }

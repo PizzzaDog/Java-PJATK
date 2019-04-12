@@ -80,9 +80,6 @@ public class Task_4 {
             while ((line = in.readLine()) != null) {
                 String[] columns = line.split(" ");
                 int len = columns.length;
-                /*for (String  s : columns) {
-                    System.out.println(s);
-                }*/
                 if(len == 2) {
                     list.add(new Person(columns[0], Integer.parseInt(columns[1]), null));
                 } else {
@@ -108,6 +105,7 @@ public class Task_4 {
             }
 
             System.out.println(Person.findColor(list, "Alice", 1993));
+            
         }catch(FileNotFoundException e){
             System.out.println(e);
         }catch(IOException e){

@@ -7,22 +7,18 @@ class AddingThread extends Thread {
     }
 
     public void run() {
-        
         for (int i = 0; i < 1000; i++) {
             c.inc(i);
-            
         }
-        }
-        
+    }
 }
 
 class Counter {
-    public int x = 0;
+    private int x = 0;
     void inc(int value) {
-        synchronized (this){
-            
-        int sum = x + value;
-        x = sum;
+        synchronized (this) {
+            int sum = x + value;
+            x = sum;
         }
     }
     public String toString() {
