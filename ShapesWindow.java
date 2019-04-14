@@ -21,7 +21,7 @@ enum ShapeType {
 abstract class Shape {
     private static final int MAX_COLOR = 255;
 
-    ShapeType type; //0 ellipse, 1 rect, 2 tria
+    ShapeType type; 
     int length;
     int height;
     int x;
@@ -38,6 +38,7 @@ abstract class Shape {
     }
 
     abstract ShapeType getType();
+    abstract void draw(Graphics graphics, double scalex, double scaley);
 
     @Override
     public String toString() {
@@ -49,8 +50,20 @@ class Ellipse extends Shape {
     public Ellipse(int windowWidth, int windowHeight){
         super(windowWidth, windowHeight);
     }
+
+    @Override 
     public ShapeType getType(){
         return ShapeType.ELLIPSE;
+    }
+
+    @Override 
+    public void draw(Graphics graphics, double scalex, double scaley) {
+        graphics.drawOval(
+            (int)(x * scalex), 
+            (int)(y * scaley), 
+            (int)(length * scalex), 
+            (int)(height * scaley)
+        );
     }
 
     @Override 
@@ -64,8 +77,19 @@ class Rectangle extends Shape {
         super(windowWidth, windowHeight);
     }
 
+    @Override 
     public ShapeType getType(){
         return ShapeType.RECTANGLE;
+    }
+
+    @Override 
+    public void draw(Graphics graphics, double scalex, double scaley){
+        graphics.drawRect(
+            (int)(x * scalex), 
+            (int)(y * scaley), 
+            (int)(length * scalex), 
+            (int)(height * scaley)
+        );
     }
 
     @Override 
@@ -89,19 +113,33 @@ class Triangle extends Shape {
         arry[2] = r.nextInt(height)+y;
     }
 
+    @Override 
     public ShapeType getType(){
         return ShapeType.TRIANGLE;
     }
 
     @Override 
+    public void draw(Graphics graphics, double scalex, double scaley){
+        int[] xtmp = new int[3];
+        int[] ytmp = new int[3];
+
+        for (int m = 0; m < 3; m++){
+            xtmp[m] = (int)(arrx[m]*scalex);
+            ytmp[m] = (int)(arry[m]*scaley);
+        }
+        graphics.drawPolygon(xtmp, ytmp, arry.length);
+    }
+
+    @Override 
     public String toString() {
         return super.toString()+ arrx[0] +"," + arrx[1] + "," +
-        arrx[2] + "," + arry[0] + "," + arry[1] + ","+ arry[2];
+            arrx[2] + "," + arry[0] + "," + arry[1] + ","+ arry[2];
     }
 }
 
 
 public class ShapesWindow extends JFrame {
+    private static final int REPAINT_INTERVAL_MSEC = 3000;
     private static final int WINDOW_HEIGHT = 768;
     private static final int WINDOW_WIDTH = 1024;
 
@@ -110,10 +148,9 @@ public class ShapesWindow extends JFrame {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             ShapesWindow window = new ShapesWindow();
-            window.movingThread().start();
+            window.addingThread().start();
             
         }); 
-       // closeFile();
     }
 
     ArrayList<Shape> shapes = new ArrayList<>();
@@ -123,27 +160,29 @@ public class ShapesWindow extends JFrame {
         setTitle("BIG Figures");
         setVisible(true);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
         try {
             writer = new FileWriter("output.txt");
-        }catch(IOException e) {
+        } catch (IOException e) {
             System.out.println(e);
         }
     }
 
-    public static void closeFile(){
+    public static void closeFile() {
+        System.out.println("Closing file");
         try {
             writer.close();
-        }catch(Exception e) {
+        } catch (Exception e) {
             System.out.println(e);
         }
+        System.out.println("Closed file");
     }
 
-    public void writeToFile(Shape p){
+    public void writeToFile(Shape p) {
         try {
-            //System.out.println(p.toString());
             writer.write(p.toString());
-            //writer.close();
-        }catch(IOException e) {
+            writer.flush();
+        } catch (IOException e) {
             System.out.println(e);
         } 
     }
@@ -155,25 +194,9 @@ public class ShapesWindow extends JFrame {
 
         g.clearRect(0, 0, getWidth(), getHeight());
         
-        for(Shape shape : shapes) {
+        for (Shape shape : shapes) {
             g.setColor(shape.c);
-
-            if(shape.getType() == ShapeType.ELLIPSE){
-                g.drawOval((int)(shape.x*scalex), (int)(shape.y*scaley), (int)(shape.length*scalex), (int)(shape.height*scaley));
-            } else if(shape.getType() == ShapeType.RECTANGLE){
-                g.drawRect((int)(shape.x*scalex), (int)(shape.y*scaley), (int)(shape.length*scalex), (int)(shape.height*scaley));
-            } else if (shape.getType() == ShapeType.TRIANGLE){
-                int[] xtmp = new int[3];
-                int[] ytmp = new int[3];
-
-                for(int m = 0; m < 3; m++){
-                    xtmp[m] = (int)(shapes.arrx[m]*scalex);
-                    ytmp[m] = (int)(shapes.arry[m]*scaley);
-                }
-                g.drawPolygon(xtmp, ytmp, shapes.arry.length);
-            } else {
-                System.out.println("err");
-            }   
+            shape.draw(g, scalex, scaley);
         }
     }
 
@@ -196,21 +219,25 @@ public class ShapesWindow extends JFrame {
             default:
                 return;
         }
-        shapes.add(shape); 
-        //writer.write(shape.toString());   
+        shapes.add(shape);
+        writeToFile(shape);
     }
   
-    public Thread movingThread() {
+    public Thread addingThread() {
         return new Thread(() -> {
-            while (true) {
-                addShape();
-                repaint();
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+            try {
+                while (true) {
+                    addShape();
+                    repaint();
+                    try {
+                        Thread.sleep(REPAINT_INTERVAL_MSEC);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
-            }
+            } finally {
+                closeFile();
+            } 
         });
     }
 }
