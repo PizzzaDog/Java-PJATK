@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.FileReader;
 
 enum ShapeType {
     ELLIPSE(0), RECTANGLE(1), TRIANGLE(2);
@@ -26,15 +28,41 @@ abstract class Shape {
     int height;
     int x;
     int y;
-    Color c;
-    
+    Color color;
+
+    public static Shape fromString(String string) {
+        String[] newString = string.split(":");
+        ShapeType shapeType = ShapeType.values()[Integer.parseInt(newString[0])];
+        switch (shapeType) {
+            case ELLIPSE:
+                return Ellipse.fromString(newString[1]);
+            case RECTANGLE:
+                return Rectangle.fromString(newString[1]);
+            case TRIANGLE:
+                return Triangle.fromString(newString[1]);
+        };
+        return Ellipse.fromString(newString[1]);
+    }
+
     Shape(int windowWidth, int windowHeight) {
         Random r = new Random();
-        c = new Color(r.nextInt(MAX_COLOR), r.nextInt(MAX_COLOR), r.nextInt(MAX_COLOR));
+        color = new Color(r.nextInt(MAX_COLOR), r.nextInt(MAX_COLOR), r.nextInt(MAX_COLOR));
         x = r.nextInt(windowWidth);
         y = r.nextInt(windowHeight);
         length = r.nextInt(windowWidth - x);
         height = r.nextInt(windowHeight - y);
+    }
+
+    //TODO: change length to width;
+    Shape(Color color, int x, int y, int length, int height){
+        this.color = color;
+        this.x = x;
+        this.y = y;
+        this.length = length;
+        this.height = height;
+    }
+    Shape(Color color) {
+        this.color = color;
     }
 
     abstract ShapeType getType();
@@ -42,7 +70,7 @@ abstract class Shape {
 
     @Override
     public String toString() {
-        return getType()+":"+c.getRed() + "," + c.getGreen() + ","+ c.getBlue() + ";";
+        return getType().getValue()+":"+color.getRed() + ";" + color.getGreen() + ";"+ color.getBlue() + ";";
     }
 }
 
@@ -50,9 +78,24 @@ class Ellipse extends Shape {
     public Ellipse(int windowWidth, int windowHeight){
         super(windowWidth, windowHeight);
     }
+    public Ellipse(Color color, int x, int y, int length, int height){
+        super(color, x, y, length, height);
+    }
+
+
+    public static Ellipse fromString(String string) {
+        String [] a = string.split(";");
+        Color color = new Color(Integer.parseInt(a[0]), Integer.parseInt(a[1]), Integer.parseInt(a[2]));
+        String [] values = a[3].split(",");
+        return new Ellipse(color, 
+            Integer.parseInt(values[0]), 
+            Integer.parseInt(values[1]),
+            Integer.parseInt(values[2]),
+            Integer.parseInt(values[3]));
+    }
 
     @Override 
-    public ShapeType getType(){
+    public ShapeType getType() {
         return ShapeType.ELLIPSE;
     }
 
@@ -68,7 +111,7 @@ class Ellipse extends Shape {
 
     @Override 
     public String toString() {
-        return super.toString() + x +"," + y + "," + length + "," +height; 
+        return super.toString() + x +"," + y + "," + length + "," +height+'\n'; 
     }
 }
 
@@ -76,14 +119,28 @@ class Rectangle extends Shape {
     public Rectangle(int windowWidth, int windowHeight){
         super(windowWidth, windowHeight);
     }
+    public Rectangle(Color color, int x, int y, int length, int height){
+        super(color, x, y, length, height);
+    }
+
+    public static Rectangle fromString(String string) {
+        String [] a = string.split(";");
+        Color color = new Color(Integer.parseInt(a[0]), Integer.parseInt(a[1]), Integer.parseInt(a[2]));
+        String [] values = a[3].split(",");
+        return new Rectangle(color, 
+            Integer.parseInt(values[0]), 
+            Integer.parseInt(values[1]),
+            Integer.parseInt(values[2]),
+            Integer.parseInt(values[3]));
+    }
 
     @Override 
-    public ShapeType getType(){
+    public ShapeType getType() {
         return ShapeType.RECTANGLE;
     }
 
     @Override 
-    public void draw(Graphics graphics, double scalex, double scaley){
+    public void draw(Graphics graphics, double scalex, double scaley) {
         graphics.drawRect(
             (int)(x * scalex), 
             (int)(y * scaley), 
@@ -94,7 +151,7 @@ class Rectangle extends Shape {
 
     @Override 
     public String toString() {
-        return super.toString() + x +"," + y + "," + length + "," + height; 
+        return super.toString() + x +"," + y + "," + length + "," + height +'\n'; 
     }
 }
 
@@ -112,14 +169,37 @@ class Triangle extends Shape {
         arry[1] = y+height;
         arry[2] = r.nextInt(height)+y;
     }
+    Triangle(Color color, int x1, int x2, int x3, int y1, int y2, int y3) {
+        super(color);
+        arrx[0] = x1;
+        arrx[1] = x2;
+        arrx[2] = x3;
+        arry[0] = y1;
+        arry[1] = y2;
+        arry[2] = y3;
+    }
+
+    public static Triangle fromString(String string) {
+        String [] a = string.split(";");
+        Color color = new Color(Integer.parseInt(a[0]), Integer.parseInt(a[1]), Integer.parseInt(a[2]));
+        String [] values = a[3].split(",");
+        return new Triangle(color, 
+            Integer.parseInt(values[0]), 
+            Integer.parseInt(values[1]),
+            Integer.parseInt(values[2]),
+            Integer.parseInt(values[3]),
+            Integer.parseInt(values[4]),
+            Integer.parseInt(values[5])
+        );
+    }
 
     @Override 
-    public ShapeType getType(){
+    public ShapeType getType() {
         return ShapeType.TRIANGLE;
     }
 
     @Override 
-    public void draw(Graphics graphics, double scalex, double scaley){
+    public void draw(Graphics graphics, double scalex, double scaley) {
         int[] xtmp = new int[3];
         int[] ytmp = new int[3];
 
@@ -133,19 +213,23 @@ class Triangle extends Shape {
     @Override 
     public String toString() {
         return super.toString()+ arrx[0] +"," + arrx[1] + "," +
-            arrx[2] + "," + arry[0] + "," + arry[1] + ","+ arry[2];
+            arrx[2] + "," + arry[0] + "," + arry[1] + ","+ arry[2]+'\n';
     }
 }
 
 
+
+
+
 public class ShapesWindow extends JFrame {
-    private static final int REPAINT_INTERVAL_MSEC = 3000;
+    private static final int REPAINT_INTERVAL_MSEC = 1000;
     private static final int WINDOW_HEIGHT = 768;
     private static final int WINDOW_WIDTH = 1024;
-
     
-    static FileWriter writer;// new FileWriter("output.txt"); 
+    static FileWriter writer;
+    static BufferedReader reader;
     public static void main(String[] args) {
+
         SwingUtilities.invokeLater(() -> {
             ShapesWindow window = new ShapesWindow();
             window.addingThread().start();
@@ -153,6 +237,7 @@ public class ShapesWindow extends JFrame {
         }); 
     }
 
+    ArrayList<Shape> shapesFromFile = new ArrayList<>();
     ArrayList<Shape> shapes = new ArrayList<>();
     
     public ShapesWindow() {
@@ -166,16 +251,12 @@ public class ShapesWindow extends JFrame {
         } catch (IOException e) {
             System.out.println(e);
         }
-    }
 
-    public static void closeFile() {
-        System.out.println("Closing file");
         try {
-            writer.close();
-        } catch (Exception e) {
+            reader = new BufferedReader(new FileReader("output2.txt"));
+        } catch (IOException e){
             System.out.println(e);
         }
-        System.out.println("Closed file");
     }
 
     public void writeToFile(Shape p) {
@@ -186,6 +267,21 @@ public class ShapesWindow extends JFrame {
             System.out.println(e);
         } 
     }
+
+    public void readFromFile(){
+        try {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                addFromFile(Shape.fromString(line));
+            }
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+    }
+
+    public void addFromFile(Shape shape){
+        shapesFromFile.add(shape);
+    }
     
     public void paint(Graphics g) {
 
@@ -194,10 +290,16 @@ public class ShapesWindow extends JFrame {
 
         g.clearRect(0, 0, getWidth(), getHeight());
         
-        for (Shape shape : shapes) {
-            g.setColor(shape.c);
+        // for (Shape shape : shapes) {
+        //     g.setColor(shape.color);
+        //     shape.draw(g, scalex, scaley);
+        //}
+
+        for (Shape shape : shapesFromFile) {
+            g.setColor(shape.color);
             shape.draw(g, scalex, scaley);
         }
+
     }
 
     public void addShape() {
@@ -222,12 +324,14 @@ public class ShapesWindow extends JFrame {
         shapes.add(shape);
         writeToFile(shape);
     }
-  
+
+    
+    
     public Thread addingThread() {
         return new Thread(() -> {
-            try {
                 while (true) {
-                    addShape();
+                    readFromFile();
+                    //addShape();
                     repaint();
                     try {
                         Thread.sleep(REPAINT_INTERVAL_MSEC);
@@ -235,9 +339,6 @@ public class ShapesWindow extends JFrame {
                         e.printStackTrace();
                     }
                 }
-            } finally {
-                closeFile();
-            } 
         });
     }
 }
