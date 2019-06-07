@@ -125,9 +125,9 @@ class Rectangle extends Shape {
     }
 
     public static Rectangle fromString(String string) {
-        String[] params = string.split(";");
-        Color color = new Color(Integer.parseInt(params[0]), Integer.parseInt(params[1]),
-                Integer.parseInt(params[2]));
+        String[] color_values = string.split(";");
+        Color color = new Color(Integer.parseInt(color_values[0]), Integer.parseInt(color_values[1]),
+                Integer.parseInt(color_values[2]));
         String[] values = color_values[3].split(",");
         return new Rectangle(color, Integer.parseInt(values[0]), Integer.parseInt(values[1]),
                 Integer.parseInt(values[2]), Integer.parseInt(values[3]));
@@ -207,6 +207,8 @@ class Triangle extends Shape {
                 + arry[2] + '\n';
     }
 }
+
+
 
 public class ShapesWindow extends JFrame {
     private static final int REPAINT_INTERVAL_MSEC = 1000;
