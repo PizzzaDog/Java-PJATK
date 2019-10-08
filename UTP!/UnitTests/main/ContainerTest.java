@@ -1,6 +1,5 @@
 package main;
 
-import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -10,9 +9,9 @@ import static org.junit.jupiter.api.Assertions.assertNotSame;
 
 class ContainerTest {
 
-    Container <Book,Integer>cont1;
-    Container <Carriage,Integer>cont2;
-    private final int NUMBER1 = 51;
+    Container <Book,Integer> cont1;
+    Container <Carriage,Integer> cont2;
+    private final int NUMBER1 = 50;
     private final int NUMBER2 = 50;
 
     @BeforeEach

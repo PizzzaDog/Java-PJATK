@@ -2,9 +2,7 @@ package main;
 
 import java.util.List;
 
-public interface IContainer<
-        TElement extends IAggregable<TElement, TResult>
-                & IDeeplyCloneable<TElement>, TResult>
+public interface IContainer<TElement extends IAggregable<TElement, TResult> & IDeeplyCloneable<TElement>, TResult>
     {
         List<TElement> elements();
         TResult aggregateAllElements();

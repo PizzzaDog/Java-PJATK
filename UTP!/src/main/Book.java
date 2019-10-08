@@ -15,7 +15,7 @@ public class Book implements IAggregable<Book, Integer>, IDeeplyCloneable<Book> 
     @Override
     public Integer aggregate(Integer intermediateResult) {
         if(intermediateResult == null) {
-            return numberOfPages + 1;
+            return numberOfPages;
         }
 
         return numberOfPages + intermediateResult;

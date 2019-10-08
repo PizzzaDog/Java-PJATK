@@ -18,7 +18,7 @@ class BookTest {
     @Test
     void aggregate() {
         Integer value1 = null;
-        assertEquals(NUMBER + 1, b1.aggregate(value1));
+        assertEquals(NUMBER, b1.aggregate(value1));
         final int value2 = 13 + NUMBER;
         assertEquals(value2, b1.aggregate(13));
     }
