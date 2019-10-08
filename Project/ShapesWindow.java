@@ -219,12 +219,15 @@ public class ShapesWindow extends JFrame {
     static BufferedReader reader;
     static int module;
 
+    //setLayout(new BorderLayout());
     public static void main(String[] args) {
 
         SwingUtilities.invokeLater(() -> {
+            
             String s = JOptionPane.showInputDialog(null, "Choose module");
             module = Integer.parseInt(s);
             ShapesWindow window = new ShapesWindow();
+            
             if (module == 1) {
                 window.addingThread().start();
             } else {
