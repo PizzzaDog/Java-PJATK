@@ -6,8 +6,10 @@ import java.util.ArrayList;
 
 public final class Manager extends Worker {
 
-    private ArrayList<Employee> subordinates = new ArrayList<>();
-    private ArrayList<Employee> allSub = new ArrayList<>();
+    // attributes
+    // * subordinates (a list of immediate subordinates)
+    // * all subordinates (a list of subordinates in all hierarchy)
+    public ArrayList<Employee> subordinates = new ArrayList<>();
 
     public Manager(String firstName, String surname, LocalDate dateOfBirth, BigDecimal salary, Manager manager, BigDecimal bonus,
                    LocalDate employementDate) {
@@ -27,25 +29,8 @@ public final class Manager extends Worker {
         subordinates.add(e);
     }
 
-    public ArrayList<Employee> getSubordinates(){
-        return subordinates;
-    }
 
 
-    public ArrayList<Employee> getAllSubs() {
 
-        subordinates
-                .stream()
-                .forEach(emp -> {
-                    if (emp instanceof Manager) {
-                        allSub.addAll(((Manager) emp).getAllSubs());
-                        allSub.add(emp);
-                    } else {
-                        allSub.add(emp);
-                    }
-                });
-
-        return allSub;
-    }
 
 }

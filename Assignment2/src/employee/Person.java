@@ -5,7 +5,7 @@ import java.time.Period;
 
 public abstract class Person {
 
-    private final String _firstName; // backing field
+    private final String _firstName;
     private final String _surname;
     private final LocalDate _dateOfBirth;
 
@@ -18,7 +18,7 @@ public abstract class Person {
 
     }
 
-    public String getFirstName() { // getter
+    public String getFirstName() {
 
         return _firstName;
     }
@@ -33,10 +33,29 @@ public abstract class Person {
 
     public int age() {
         LocalDate currentDate = LocalDate.now();
-        if ((_dateOfBirth != null) && (currentDate != null)) {
-            return Period.between(_dateOfBirth, currentDate).getYears();
-        }
 
-        return 0;
+        return Period.between(_dateOfBirth, currentDate).getYears();
     }
+
+    public int compareAge(Person p) {
+        if(this._dateOfBirth.compareTo(p.getDateOfBirth()) > 0) {
+            return -1;
+        } else if(this._dateOfBirth.compareTo(p.getDateOfBirth()) == 0){
+            return 0;
+        } else return 1;
+    }
+
+    public boolean isOlder(Person p) {
+        return compareAge(p) == 1;
+    }
+
+    public boolean isOlder(int age) {
+        return this.age() > age;
+    }
+
+    public boolean isYounger(Person p) {
+        return compareAge(p) == -1;
+    }
+
+
 }

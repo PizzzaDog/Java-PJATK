@@ -13,7 +13,7 @@ import java.util.List;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+import static org.junit.jupiter.api.Assertions.assertNotSame;
 
 class HumanResourcesStatisticsTest {
     List<Employee> test;
@@ -21,8 +21,20 @@ class HumanResourcesStatisticsTest {
 
     @BeforeEach
     void before() {
+//        List<Employee> test = new ArrayList<>();
+//        int i = 0;
+//        while(i < 20){
+//            workers.add(new Manager("Name"+ i, "LastName"+ i, LocalDate.of(((int)(Math.random()*50)+1950),
+//                                            ((int)(Math.random()*12)+1),((int)(Math.random()*28)+1)),
+//                                            LocalDate.of(((int)(Math.random()*50)+1950),
+//                                                    ((int)(Math.random()*12)+1),
+//                                                    ((int)(Math.random()*28)+1))
+//                                                    ,""+(int) (Math.random()*4000)+2000,
+//                                                    new BigDecimal((int) (Math.random()*2000))));
+//            i++;
+//        }
         test = new ArrayList<>();
-        Manager e1 = new Manager("Bocley","Wright", LocalDate.of(2000,3,27), new BigDecimal(2000), new BigDecimal(200), LocalDate.of(2017,9,13));
+        Manager e1 = new Manager("Bocley","Wright", LocalDate.of(2000,3,27), new BigDecimal(2000), new BigDecimal(200), LocalDate.of(2018,10,13));
         Manager e2 = new Manager("Kerr","Hill",LocalDate.of(1965,1,8),new BigDecimal(4000),e1, new BigDecimal(300), LocalDate.of(2000,1,10));
         Manager e3 = new Manager("Paula","Davis",LocalDate.of(1993,8,12),new BigDecimal(2500),e1,new BigDecimal(100), LocalDate.of(2013,6,18));
         Manager e4 = new Manager("Kristianna","Phillips",LocalDate.of(1996,1,31),new BigDecimal(2800),e1,new BigDecimal(200), LocalDate.of(2014,5,17));
@@ -30,11 +42,11 @@ class HumanResourcesStatisticsTest {
         Manager e6 = new Manager("Robyn","Russell",LocalDate.of(1971,8,10),new BigDecimal(2100),e2, new BigDecimal(100),LocalDate.of(2000,12,10));
         Manager e7 = new Manager("Adah","Brooks",LocalDate.of(1989,5,4),new BigDecimal(4200),e4, new BigDecimal(100),LocalDate.of(2000,12,10));
         Employee e8 = new Worker("Sequoia","Harris",LocalDate.of(1979,9,17),new BigDecimal(5000),e2,new BigDecimal(100),LocalDate.of(2000,12,10));
-        Employee e9 = new Worker("Trory","Hall",LocalDate.of(1992,8,20),new BigDecimal(7000),e5,new BigDecimal(100),LocalDate.of(2011,12,10));
+        Employee e9 = new Worker("Trory","Hall",LocalDate.of(1992,8,20),new BigDecimal(2200),e5,new BigDecimal(100),LocalDate.of(2011,12,10));
         Employee e10 = new Worker("Georgie","Anderson",LocalDate.of(1966,12,23),new BigDecimal(2400),e5 ,new BigDecimal(100),LocalDate.of(2012,12,10));
         Employee e11 = new Worker("Zinovia","Aterson",LocalDate.of(1985,4,14),new BigDecimal(5600),e5,new BigDecimal(100), LocalDate.of(2012,12,10));
         Employee e12 = new Worker("Maverick","Stewart",LocalDate.of(1994,4,12),new BigDecimal(2000),new BigDecimal(100), LocalDate.of(2012,12,10));
-        Employee e13 = new Worker("Edyta","Nelson",LocalDate.of(1984,11,8),new BigDecimal(2600),e4,new BigDecimal(100),LocalDate.of(2015,12,10));
+        Employee e13 = new Worker("Edyta","Nelson",LocalDate.of(1984,11,8),new BigDecimal(2600),e4,new BigDecimal(100),LocalDate.of(2012,12,10));
         Employee e14 = new Worker("Aries","Cook",LocalDate.of(1972,5,28),new BigDecimal(2300),e7,new BigDecimal(100),LocalDate.of(2012,12,10));
         Employee e15 = new Worker("Elfrida","Brooks",LocalDate.of(1986,5,27),new BigDecimal(1830),e7,new BigDecimal(100),LocalDate.of(2012,12,10));
         Employee e16 = new Trainee("Violeta","Anderson",LocalDate.of(1990,12,25),new BigDecimal(1800),e2, LocalDate.of(2019,6,1),14);
@@ -63,12 +75,17 @@ class HumanResourcesStatisticsTest {
         test.add(e18);
         test.add(e19);
         test.add(e20);
+
+//        ArrayList<PayrollEntry> testEntry= new ArrayList<>();
+//        testEntry.add(new PayrollEntry(e1,new BigDecimal(2000), new BigDecimal(200)));
+//        testEntry.add(new PayrollEntry(e8, new BigDecimal(5000)))
     }
 
     @Test
     void payroll() {
         List<PayrollEntry> t = HumanResourcesStatistics.payroll(test);
         double d1 = 2200;
+
 
         int d3 = 1800;
 
@@ -92,6 +109,8 @@ class HumanResourcesStatisticsTest {
         assertEquals(1700,t.get(0).get_salaryPlusBonus().doubleValue());
         assertEquals(2220,t.get(1).get_salaryPlusBonus().doubleValue());
 
+
+
     }
 
     @Test
@@ -108,12 +127,12 @@ class HumanResourcesStatisticsTest {
 
     @Test
     void highest() {
-        assertEquals(7000,HumanResourcesStatistics.highest(test));
+        assertEquals(5600,HumanResourcesStatistics.highest(test));
     }
 
     @Test
     void highestWithBonus() {
-        assertEquals(7100,HumanResourcesStatistics.highestWithBonus(test));
+        assertEquals(5700,HumanResourcesStatistics.highestWithBonus(test));
     }
 
     @Test
@@ -129,44 +148,6 @@ class HumanResourcesStatisticsTest {
         assertEquals(test.size() - 2,t.size());
         assertEquals(test.get(0),t.get(0));
         assertEquals(test.get(17),t.get(17));
-    }
 
-    @Test
-    void olderThenAndEarnMore() {
-        assertEquals(13, HumanResourcesStatistics.olderThenAndEarnMore(test,test.get(0)).size());
-    }
-
-    @Test
-    void practiceLengthLongerThan() {
-        HumanResourcesStatistics.practiceLengthLongerThan(test,31);
-        assertEquals(1800,test.get(15).getSalary().intValue());
-        assertEquals((int)(930*1.05),test.get(19).getSalary().intValue());
-    }
-
-    @Test
-    void seniorityLongerThanNum() {
-        HumanResourcesStatistics.seniorityLongerThanNum(test, 220);
-        Worker i = (Worker)test.get(7);
-        Worker k = (Worker)test.get(0);
-        assertEquals(new BigDecimal(300), i.getBonus());
-        assertEquals(new BigDecimal(200), k.getBonus());
-    }
-
-    @Test
-    void seniorityBetweenOneAndThreeYears() {
-        HumanResourcesStatistics.seniorityBetweenOneAndThreeYears(test);
-        assertEquals(new BigDecimal(2000*1.1).intValue(), test.get(0).getSalary().intValue());
-    }
-
-
-    @Test
-    void seniorityLongerThan() {
-       HumanResourcesStatistics.seniorityLongerThan(test, test.get(8));
-       assertEquals(new BigDecimal(7000), test.get(7).getSalary());
-    }
-
-    @Test
-    void seniorityBetweenTwoAndFourYearsAndAgeGreaterThan() {
-        assertEquals(1,HumanResourcesStatistics.seniorityBetweenTwoAndFourYearsAndAgeGreaterThan(test,23).size());
     }
 }
