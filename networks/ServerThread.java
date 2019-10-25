@@ -15,11 +15,8 @@ public class ServerThread extends Thread {
 			BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 			PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
 		
-			String line;
-			if((line = in.readLine()) != null && !line.isEmpty())
-			{
-				System.out.println(line);	
-			}
+			String line = in.readLine();
+			
 			String[] words = line.split(" ", 4);
 			String name = words[1];
 			String ip = words[2];
@@ -37,7 +34,7 @@ public class ServerThread extends Thread {
 					Strign ip_pr = s[1];
 					Strign prot_pr = s[2];
 					String messg = words[4];
-					out.println(new TCPClient(ip_pr,port_pr,messg));
+					out.println(new TCPClient(ip_pr,port_pr,messg).connect());
 					break;
 			}
 		} catch (IOException e1) {
