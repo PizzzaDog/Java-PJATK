@@ -11,7 +11,7 @@ public class TCPServer {
 		ServerSocket server = null;
 		Socket client = null;
 		try {
-			server = new ServerSocket(0); 
+			server = new ServerSocket(55555); 
 		}
 		catch (IOException e) {
 			System.out.println("Could not listen");
@@ -28,7 +28,7 @@ public class TCPServer {
 				System.exit(-1);
 			}
 		
-			(new ServerThread(client)).start();
+			(new ServerThread(client, this)).start();
 		}
 	}
 

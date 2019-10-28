@@ -12,19 +12,19 @@ public class TCPClient {
 		BufferedReader in = null;
 		String address;
 		int _port;
-		String _messeg;
+		String messeg;
 
 	public TCPClient(String ip, String port, String messeg){
 		address = ip;
 		_port = Integer.parseInt(port);
-		_messeg = messeg;
+		this.messeg = messeg;
 		
 	}
 
 	public String connect(){
-		
+		String line = "something is wrong";
 		try {
-			socket = new Socket(address, port);
+			socket = new Socket(address, _port);
 			out = new PrintWriter(socket.getOutputStream(), true);
 			in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 		}
@@ -39,7 +39,7 @@ public class TCPClient {
 		
 		try {
 			out.println(messeg);
-			String line = in.readLine();
+			line = in.readLine();
 	    }
 	    catch (IOException e) {
 	    	System.out.println("Error during communication");

@@ -1,15 +1,12 @@
 package utp;
 
 import Comporators.*;
-
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public final class PersonDatabase {
     public List<Person> tmp;
+    Map<Date,Person> m = null;
 
 
     public List<Person> sortedByFirstName() {
@@ -33,19 +30,18 @@ public final class PersonDatabase {
     public List<Person> bornOnDay(Date date) {
         List<Person> t = new ArrayList<>();
         tmp = InputParser.parse(new File("/Users/alice/Coding/Java/assignment4/src/utp/people.txt"));
-            createMap()
-                .entrySet()
+        Map<Date, Person> m = createMap(tmp);
+                m.entrySet()
                 .stream()
                 .filter(e -> e.getKey().equals(date))
                 .forEach(e -> t.add(e.getValue()));
         return t;
     }
 
-    public Map<Date, Person> createMap() {
-
-        Map<Date,Person> m = null;
+    public Map<Date, Person> createMap(List<Person> tmp) {
+        m = new HashMap<>();
         for (Person p: tmp) {
-            m.put(p.get_birthdate() , p);
+            m.put(p.get_birthdate(), p);
         }
         return m;
     }
