@@ -17,12 +17,12 @@ public final class InputParser {
     // 2. Convert input string representing date using SimpleDateFormat "yyyy-MM-dd"
 
     public static BufferedReader reader;
-    public static List<Person> people = new ArrayList<>();
     //private static final Pattern NAME_PATTERN = Pattern.compile("^[a-zA-Z]*$");
     //private static final Pattern DATE_PATTERN = Pattern.compile("^\\d{4}-\\d{2}-\\d{2}$");
     private static final Pattern FULL = Pattern.compile("([a-zA-Z]+) ([a-zA-Z]+) (\\d{4}-\\d{2}-\\d{2})");
 
     public static List<Person> parse(File file) {
+        List<Person> people = new ArrayList<>();
         String line;
         try {
             reader = new BufferedReader(new FileReader(file));

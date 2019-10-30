@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="772e68e0-c640-48d8-baa2-58b08ed3f54e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Test/utp/InputParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/utp/InputParserTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/utp/PersonDatabaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/utp/PersonDatabaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utp/InputParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utp/InputParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utp/PersonDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utp/PersonDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utp/people.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/utp/people.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,11 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/utp/InputParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="466">
-              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+            <state relative-caret-position="28">
+              <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -34,8 +33,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/utp/PersonDatabase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+            <state relative-caret-position="150">
+              <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1399#1400#0" expanded="true" />
@@ -48,8 +47,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Test/utp/PersonDatabaseTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1455">
-              <caret line="97" column="60" selection-start-line="97" selection-start-column="60" selection-end-line="97" selection-end-column="60" />
+            <state relative-caret-position="36">
+              <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -78,11 +77,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assignment4.iml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/utp/Person.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="30" column="52" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="52" />
+            <state relative-caret-position="141">
+              <caret line="30" column="52" selection-start-line="30" selection-start-column="52" selection-end-line="30" selection-end-column="52" />
               <folding>
                 <element signature="e#1274#1275#0" expanded="true" />
                 <element signature="e#1342#1343#0" expanded="true" />
@@ -145,11 +149,11 @@
         <option value="$PROJECT_DIR$/src/Comporators/MultipleComporator.java" />
         <option value="$PROJECT_DIR$/src/Comporators/BirthdateComparator.java" />
         <option value="$PROJECT_DIR$/src/utp/Person.java" />
-        <option value="$PROJECT_DIR$/src/utp/InputParser.java" />
         <option value="$PROJECT_DIR$/src/utp/people.txt" />
         <option value="$PROJECT_DIR$/Test/utp/InputParserTest.java" />
         <option value="$PROJECT_DIR$/src/utp/PersonDatabase.java" />
         <option value="$PROJECT_DIR$/Test/utp/PersonDatabaseTest.java" />
+        <option value="$PROJECT_DIR$/src/utp/InputParser.java" />
       </list>
     </option>
   </component>
@@ -197,6 +201,10 @@
               <item name="assignment4" type="462c0819:PsiDirectoryNode" />
               <item name="Test" type="462c0819:PsiDirectoryNode" />
               <item name="utp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="assignment4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
@@ -268,7 +276,43 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.PersonDatabaseTest.bornOnDay">
+  <component name="RunManager" selected="JUnit.PersonDatabaseTest">
+    <configuration name="PersonDatabaseTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="assignment4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="utp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="utp" />
+      <option name="MAIN_CLASS_NAME" value="utp.PersonDatabaseTest" />
+      <option name="TEST_OBJECT" value="uniqueId" />
+      <uniqueIds>
+        <uniqueId value="[engine:junit-jupiter]/[class:utp.PersonDatabaseTest]" />
+      </uniqueIds>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PersonDatabaseTest (2)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="assignment4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="utp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="utp" />
+      <option name="MAIN_CLASS_NAME" value="utp.PersonDatabaseTest" />
+      <option name="TEST_OBJECT" value="uniqueId" />
+      <uniqueIds>
+        <uniqueId value="[engine:junit-jupiter]/[class:utp.PersonDatabaseTest]" />
+      </uniqueIds>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PersonDatabaseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="assignment4" />
       <extension name="coverage">
@@ -300,38 +344,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PersonDatabaseTest.sortedByBirthdate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="assignment4" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="utp.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="utp" />
-      <option name="MAIN_CLASS_NAME" value="utp.PersonDatabaseTest" />
-      <option name="METHOD_NAME" value="sortedByBirthdate" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PersonDatabaseTest.sortedByFirstName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="assignment4" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="utp.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="utp" />
-      <option name="MAIN_CLASS_NAME" value="utp.PersonDatabaseTest" />
-      <option name="METHOD_NAME" value="sortedByFirstName" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="PersonDatabaseTest.sortedBySurnameFirstNameAndBirthdate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="assignment4" />
       <extension name="coverage">
@@ -350,11 +362,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PersonDatabaseTest.bornOnDay" />
-        <item itemvalue="JUnit.PersonDatabaseTest.sortedBySurnameFirstNameAndBirthdate" />
-        <item itemvalue="JUnit.PersonDatabaseTest.sortedByFirstName" />
         <item itemvalue="JUnit.PersonDatabaseTest" />
-        <item itemvalue="JUnit.PersonDatabaseTest.sortedByBirthdate" />
+        <item itemvalue="JUnit.PersonDatabaseTest (2)" />
+        <item itemvalue="JUnit.PersonDatabaseTest.sortedBySurnameFirstNameAndBirthdate" />
+        <item itemvalue="JUnit.PersonDatabaseTest (1)" />
+        <item itemvalue="JUnit.PersonDatabaseTest.bornOnDay" />
       </list>
     </recent_temporary>
   </component>
@@ -372,44 +384,44 @@
       <workItem from="1571765036321" duration="2406000" />
       <workItem from="1571931155290" duration="9223000" />
       <workItem from="1572023312253" duration="1702000" />
-      <workItem from="1572358735571" duration="14862000" />
+      <workItem from="1572358735571" duration="17900000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="InputParserTest_parse - 2019.10.30 at 14h 10m 38s.xml">
-      <configuration name="InputParserTest.parse" configurationId="JUnit" />
+    <history-entry file="PersonDatabaseTest_bornOnDay - 2019.10.30 at 18h 00m 20s.xml">
+      <configuration name="PersonDatabaseTest.bornOnDay" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PersonDatabaseTest_sortedByFirstName - 2019.10.30 at 14h 12m 20s.xml">
-      <configuration name="PersonDatabaseTest.sortedByFirstName" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PersonDatabaseTest - 2019.10.30 at 14h 13m 12s.xml">
+    <history-entry file="PersonDatabaseTest - 2019.10.30 at 18h 27m 12s.xml">
       <configuration name="PersonDatabaseTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PersonDatabaseTest_sortedByFirstName - 2019.10.30 at 14h 14m 07s.xml">
-      <configuration name="PersonDatabaseTest.sortedByFirstName" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PersonDatabaseTest_sortedByBirthdate - 2019.10.30 at 14h 14m 26s.xml">
-      <configuration name="PersonDatabaseTest.sortedByBirthdate" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PersonDatabaseTest_sortedByFirstName - 2019.10.30 at 14h 14m 34s.xml">
-      <configuration name="PersonDatabaseTest.sortedByFirstName" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PersonDatabaseTest - 2019.10.30 at 14h 16m 31s.xml">
+    <history-entry file="PersonDatabaseTest - 2019.10.30 at 18h 29m 15s.xml">
       <configuration name="PersonDatabaseTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PersonDatabaseTest_sortedByFirstName - 2019.10.30 at 14h 16m 37s.xml">
-      <configuration name="PersonDatabaseTest.sortedByFirstName" configurationId="JUnit" />
+    <history-entry file="PersonDatabaseTest - 2019.10.30 at 18h 30m 31s.xml">
+      <configuration name="PersonDatabaseTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PersonDatabaseTest_sortedBySurnameFirstNameAndBirthdate - 2019.10.30 at 14h 16m 41s.xml">
+    <history-entry file="PersonDatabaseTest - 2019.10.30 at 18h 38m 11s.xml">
+      <configuration name="PersonDatabaseTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PersonDatabaseTest_(1) - 2019.10.30 at 18h 39m 04s.xml">
+      <configuration name="PersonDatabaseTest (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PersonDatabaseTest_sortedBySurnameFirstNameAndBirthdate - 2019.10.30 at 18h 40m 08s.xml">
       <configuration name="PersonDatabaseTest.sortedBySurnameFirstNameAndBirthdate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PersonDatabaseTest_bornOnDay - 2019.10.30 at 14h 16m 45s.xml">
-      <configuration name="PersonDatabaseTest.bornOnDay" configurationId="JUnit" />
+    <history-entry file="PersonDatabaseTest - 2019.10.30 at 18h 40m 48s.xml">
+      <configuration name="PersonDatabaseTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PersonDatabaseTest_(2) - 2019.10.30 at 18h 44m 40s.xml">
+      <configuration name="PersonDatabaseTest (2)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PersonDatabaseTest - 2019.10.30 at 18h 46m 02s.xml">
+      <configuration name="PersonDatabaseTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30674000" />
+    <option name="totallyTimeSpent" value="33712000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -425,8 +437,8 @@
       <window_info anchor="bottom" id="Messages" order="0" weight="0.32891566" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.28674698" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.28674698" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.25783134" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" />
@@ -448,6 +460,24 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Test/utp/PersonDatabaseTest.java</url>
+          <line>43</line>
+          <properties />
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/utp/InputParser.java</url>
+          <line>51</line>
+          <properties />
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/PJATK/3_semester/UTP/UTP/skeletons/assignment-04/src/eu/glowacki/utp/assignment04/InputParser.java">
@@ -491,13 +521,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Comporators/MultipleComporator.java" />
-    <entry file="file://$PROJECT_DIR$/src/utp/people.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Comporators/FirstNameComparator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -508,34 +531,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Test/utp/PersonDatabaseTest.java">
+    <entry file="file://$PROJECT_DIR$/src/utp/Person.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1455">
-          <caret line="97" column="60" selection-start-line="97" selection-start-column="60" selection-end-line="97" selection-end-column="60" />
+        <state relative-caret-position="141">
+          <caret line="30" column="52" selection-start-line="30" selection-start-column="52" selection-end-line="30" selection-end-column="52" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utp/InputParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utp/PersonDatabase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1399#1400#0" expanded="true" />
-            <element signature="e#1452#1453#0" expanded="true" />
+            <element signature="e#1274#1275#0" expanded="true" />
+            <element signature="e#1342#1343#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -550,6 +552,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/utp/PersonDatabase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1399#1400#0" expanded="true" />
+            <element signature="e#1452#1453#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utp/people.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Test/utp/InputParserTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -557,13 +578,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utp/Person.java">
+    <entry file="file://$PROJECT_DIR$/assignment4.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test/utp/PersonDatabaseTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="30" column="52" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="52" />
+        <state relative-caret-position="36">
+          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
           <folding>
-            <element signature="e#1274#1275#0" expanded="true" />
-            <element signature="e#1342#1343#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utp/InputParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

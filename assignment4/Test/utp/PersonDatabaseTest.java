@@ -9,7 +9,7 @@ import java.util.List;
 
 class PersonDatabaseTest {
 
-    PersonDatabase p = new PersonDatabase();
+    PersonDatabase p;
 
     List<Person> test1;
     List<Person> test2;
@@ -18,6 +18,8 @@ class PersonDatabaseTest {
 
     @BeforeEach
     void before(){
+
+        p = new PersonDatabase();
 
         test1 = new ArrayList<>();
         test2 = new ArrayList<>();
@@ -69,39 +71,44 @@ class PersonDatabaseTest {
     @Test
     void sortedByFirstName() {
         //System.out.println("Sort by first name");
-        p.sortedByFirstName();
 
-        for(int i = 0; i < p.tmp.size(); i++) {
-            assertEquals(test1.get(i).get_firstName(), p.tmp.get(i).get_firstName());
+        List<Person> sorted = p.sortedByFirstName();
+        System.out.println(sorted.toString());
+        System.out.println(sorted.size());
+        for(int i = 0; i < sorted.size(); i++) {
+            assertEquals(test1.get(i).get_firstName(), sorted.get(i).get_firstName());
         }
     }
 
     @Test
     void sortedByBirthdate() {
 //        System.out.println("sortedByBirthdate");
-        p.sortedByBirthdate();
-//        System.out.println(p.toString());
-        for(int i = 0; i < p.tmp.size(); i++) {
-            assertEquals(test2.get(i).get_birthdate() ,p.tmp.get(i).get_birthdate());
+        List<Person> sorted = p.sortedByBirthdate();
+        System.out.println(sorted.size());
+        //System.out.println(test2.toString());
+        for(int i = 0; i < sorted.size(); i++) {
+            assertEquals(test2.get(i).get_birthdate() ,sorted.get(i).get_birthdate());
         }
     }
 
     @Test
     void sortedBySurnameFirstNameAndBirthdate() {
 //        System.out.println("sortedBySurnameFirstNameAndBirthdate");
-        p.sortedBySurnameFirstNameAndBirthdate();
+        List<Person> sorted = p.sortedBySurnameFirstNameAndBirthdate();
+        System.out.println(sorted.size());
 //        System.out.println(p.toString());
-        System.out.println(p.tmp.toString());
-        for(int i = 0; i < p.tmp.size(); i++) {
-            assertEquals(test3.get(i).get_firstName() ,p.tmp.get(i).get_firstName());
-            assertEquals(test3.get(i).get_surname() ,p.tmp.get(i).get_surname());
-            assertEquals(test3.get(i).get_birthdate() ,p.tmp.get(i).get_birthdate());
+        System.out.println(sorted.toString());
+        for(int i = 0; i < sorted.size(); i++) {
+            assertEquals(test3.get(i).get_firstName() ,sorted.get(i).get_firstName());
+            assertEquals(test3.get(i).get_surname() , sorted.get(i).get_surname());
+            assertEquals(test3.get(i).get_birthdate() , sorted.get(i).get_birthdate());
         }
     }
 
     @Test
     void bornOnDay(){
         List<Person> date = new ArrayList<>();
+        //System.out.println(.size());
 //        System.out.println("born on day");
 //        try {
 //            System.out.println(p.bornOnDay(new SimpleDateFormat("yyyy-MM-dd").parse("2000-12-12")).toString());
@@ -122,4 +129,5 @@ class PersonDatabaseTest {
         }
 
     }
+
 }
