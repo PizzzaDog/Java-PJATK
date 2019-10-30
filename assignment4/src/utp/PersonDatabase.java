@@ -6,8 +6,11 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public final class PersonDatabase {
-    public List<Person> tmp = InputParser.parse(new File("/Users/alice/Coding/Java/assignment4/src/utp/people.txt"));;
+    public List<Person> tmp;
     Map<Date,List<Person>> map = null;
+    public PersonDatabase() {
+        tmp = InputParser.parse(new File("/Users/alice/Coding/Java/assignment4/src/utp/people.txt"));
+    }
 
 
     public List<Person> sortedByFirstName() {

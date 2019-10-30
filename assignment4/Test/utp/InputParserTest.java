@@ -10,7 +10,6 @@ class InputParserTest {
 
     @Test
     void parse() {
-
-        //System.out.println(InputParser.parse(new File("/Users/alice/Coding/Java/assignment4/src/utp/people.txt")).toString());
+        System.out.println(InputParser.parse(new File("/Users/alice/Coding/Java/assignment4/src/utp/people.txt")).toString());
     }
 }
