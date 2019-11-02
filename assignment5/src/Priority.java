@@ -1,9 +1,9 @@
 import java.util.Random;
 
 public enum Priority {
-    LOW,
+    HIGH,
     MEDIUM,
-    HIGH;
+    LOW;
 
     public static Priority genValue() {
         Random random = new Random();
