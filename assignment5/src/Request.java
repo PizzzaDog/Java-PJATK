@@ -6,24 +6,24 @@ public class Request extends Message {
     private Random rand = new Random();
     private int value1;
     private int value2;
-    private static int count = 1;
-    private int id;
     private Priority pr;
+    private static int count = 0;
+    private final int id;
 
+    private static synchronized int getID(){
+        count++;
+        return count;
+    }
 
-    public Request(Requestor r) {
+    public Request(Requester r) {
         super(r);
+        id = getID();
         pr = Priority.genValue();
         value1 = genValue();
         value2 = genValue();
-        setId();
-        System.out.println(pr +" "+value1+" " + value2 + " " + id);
+        System.out.println(pr +" "+value1+" " + value2 + " id " + id);
     }
 
-    synchronized public void setId() {
-        id = count;
-        count++;
-    }
 
     public int genValue(){
         return rand.nextInt(HIGH - LOW) + LOW;
@@ -44,4 +44,5 @@ public class Request extends Message {
     public Priority getPr() {
         return pr;
     }
+
 }

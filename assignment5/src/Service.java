@@ -1,24 +1,16 @@
 public class Service implements Runnable {
 
-    public void getRequest() {
-       Request req = getFromQueue();
-       proceedRequest(req.getValue1(), req.getValue2(), req.requestor, req.getPr(), req.getId());
-   }
 
-   public void proceedRequest(int a, int b, Requestor requestor, Priority priority, int id) {
+   public void proceedRequest(int a, int b, Requester requestor, Priority priority, int id) {
        addToResponseQueue(new Response(a, b, requestor, priority,id ), requestor);
    }
 
-   synchronized public void addToResponseQueue(Response response, Requestor requestor) {
+   public void addToResponseQueue(Response response, Requester requestor) {
         requestor.queueResponse.add(response);
    }
 
-   synchronized public Request getFromQueue() {
-       return Requestor.queueRequest.poll();
-   }
-
-   synchronized public boolean checkIsReqEmpty() {
-        return Requestor.queueRequest.isEmpty();
+   public boolean checkIsReqEmpty() {
+        return Requester.queueRequest.isEmpty();
    }
 
     @Override
@@ -30,9 +22,12 @@ public class Service implements Runnable {
                } catch(Exception e) {
                    System.out.println(e);
                }
-
            }
-           getRequest();
+
+           Request req;
+           if ((req = Requester.queueRequest.poll()) != null){
+               proceedRequest(req.getValue1(), req.getValue2(), req.requestor, req.getPr(), req.getId());
+           }
        }
     }
 }

@@ -1,8 +1,7 @@
 public class Message {
-    public Requestor requestor;
+    public Requester requestor;
 
-    Message(Requestor r){
+    Message(Requester r){
         this.requestor = r;
     }
-
 }

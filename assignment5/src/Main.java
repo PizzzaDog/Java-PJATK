@@ -2,16 +2,16 @@ import java.lang.*;
 
 public class Main {
     public static void main(String[] args) {
-        Thread req1 = new Thread(new Requestor());
+        Thread req1 = new Thread(new Requester());
         req1.start();
 
-        Thread req2 = new Thread(new Requestor());
+        Thread req2 = new Thread(new Requester());
         req2.start();
 
-        Thread req3 = new Thread(new Requestor());
+        Thread req3 = new Thread(new Requester());
         req3.start();
 
-        Thread req4 = new Thread(new Requestor());
+        Thread req4 = new Thread(new Requester());
         req4.start();
 
 
@@ -26,7 +26,5 @@ public class Main {
 
         Thread service4 = new Thread(new Service());
         service4.start();
-
-
     }
 }
