@@ -6,17 +6,12 @@ public class Requester implements Runnable {
     public static PriorityBlockingQueue<Request> queueRequest = new PriorityBlockingQueue<>(5,new Comparator<Request>() {
         @Override
          public int compare(Request o1, Request o2) {
-            if(o1 == null) {
-                return 1;
-            }else if(o2 == null){
-                return -1;
-            }
             return o1.getPr().compareTo(o2.getPr());
         }
     }
     );
 
-    public PriorityBlockingQueue<Response> queueResponse = new PriorityBlockingQueue<>(10,Comparator.comparing(Response::getPr, Comparator.naturalOrder()));
+    public PriorityBlockingQueue<Response> queueResponse = new PriorityBlockingQueue<>(5,Comparator.comparing(Response::getPr, Comparator.naturalOrder()));
 
 
     public void getFromQueue() {
