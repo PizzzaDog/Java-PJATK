@@ -24,7 +24,7 @@ public class Proxy {
         while(true) {
             try {
                 client = server.accept();
-                //System.out.println("success");
+                //System.out.println("client connected");
             }
             catch (IOException e) {
                 System.out.println("Accept failed");
