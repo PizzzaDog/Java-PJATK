@@ -55,13 +55,7 @@ public class ServerThread extends Thread {
                 responseToClient.write(response, 0, bytesRead);
                 responseToClient.flush();
                 System.out.println(new String(response));
-//                System.out.println("++++++++++");
             }
-
-
-//            if(requestToServer!=null){
-//                requestToServer.close();
-//            }
 
             in.close();
             responseFromServer.close();
@@ -76,9 +70,9 @@ public class ServerThread extends Thread {
 
         try {
             socket.close();
-//            if(hostSocket != null) {
-//                hostSocket.close();
-//            }
+            if(hostSocket != null) {
+                hostSocket.close();
+            }
         } catch (IOException e) {
             // do nothing
         }

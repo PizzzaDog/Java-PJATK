@@ -2,22 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10ea8ffb-857b-4f71-a37b-f87b4f45fa3e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Assignment6/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/Test/generators/GeneratorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/src/classes/SubjectEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/src/extensions/StudentGroupExt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/src/generators/DateGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/src/generators/Generator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/src/generators/NameGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Assignment6/src/generators/PeselGenerator.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../UDP/src/UDP.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../UDP/src/UDPClient.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../UDP/src/UDPServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assignment7/test/JarUtilityTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled/src/sdlgk.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Assignment6/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment6/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Assignment6/Test/extensions/PersonExtTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment6/src/classes/Degree.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment6/src/classes/Degree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Assignment6/src/classes/Dep.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment6/src/classes/Dep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Assignment6/src/classes/Generators.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment6/src/classes/Generators.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment6/src/classes/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment6/src/classes/Department.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment6/src/classes/Generators.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Assignment6/src/classes/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment6/src/classes/Group.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Assignment6/src/classes/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment6/src/classes/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment6/src/classes/PeselGenerator.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Assignment6/src/classes/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment6/src/classes/Student.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Assignment6/src/classes/StudentGenerator.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Assignment6/src/classes/StudentGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment6/src/classes/StudentGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment6/src/classes/Subject.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment6/src/classes/Subject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Assignment6/src/classes/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment6/src/classes/Teacher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment6/src/extensions/DepartmentExt.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment6/src/extensions/DepartmentExt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment6/src/extensions/PersonExt.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment6/src/extensions/PersonExt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment6/src/extensions/StudentExt.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment6/src/extensions/StudentExt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment6/src/extensions/StudentGroup.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment6/src/extensions/SubjectExt.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment6/src/extensions/SubjectExt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment6/src/extensions/TeacherExt.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment6/src/extensions/TeacherExt.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Proxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Proxy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assignment7/src/FileUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/../assignment7/src/FileUtility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assignment7/src/JarUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/../assignment7/src/JarUtility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assignment7/src/ZipUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/../assignment7/src/ZipUtility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assignment7/test/FileUtilityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../assignment7/test/FileUtilityTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assignment7/test/ZipUtilityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../assignment7/test/ZipUtilityTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,7 +58,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Proxy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
+            <state relative-caret-position="345">
               <caret line="26" column="18" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -46,8 +70,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ServerThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="67" column="37" selection-start-line="67" selection-start-column="37" selection-end-line="67" selection-end-column="37" />
+            <state relative-caret-position="354">
+              <caret line="74" column="13" lean-forward="true" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -100,6 +124,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -116,8 +142,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -175,6 +199,8 @@
       <workItem from="1574020542074" duration="6611000" />
       <workItem from="1574062808891" duration="3486000" />
       <workItem from="1574154885691" duration="91000" />
+      <workItem from="1574605441430" duration="1160000" />
+      <workItem from="1574625639257" duration="192000" />
     </task>
     <task id="LOCAL-00001" summary="mess">
       <created>1574024699106</created>
@@ -183,17 +209,24 @@
       <option name="project" value="LOCAL" />
       <updated>1574024699106</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="mess">
+      <created>1574605683320</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1574605683320</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25076000" />
+    <option name="totallyTimeSpent" value="26428000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28612304" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29470673" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -202,7 +235,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3180723" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3180723" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.32168674" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -262,16 +295,9 @@
     <entry file="file://$PROJECT_DIR$/src/TCPServer.java" />
     <entry file="file://$PROJECT_DIR$/src/TCPThread" />
     <entry file="file://$PROJECT_DIR$/src/Http_proxy.java" />
-    <entry file="file://$PROJECT_DIR$/request.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="25" selection-start-column="25" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Proxy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
+        <state relative-caret-position="345">
           <caret line="26" column="18" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -279,10 +305,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/request.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="25" selection-start-column="25" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ServerThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="67" column="37" selection-start-line="67" selection-start-column="37" selection-end-line="67" selection-end-column="37" />
+        <state relative-caret-position="354">
+          <caret line="74" column="13" lean-forward="true" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
