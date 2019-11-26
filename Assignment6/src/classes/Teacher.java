@@ -1,5 +1,7 @@
 package classes;
 
+import extensions.TeacherExt;
+
 import java.util.Date;
 import java.util.Objects;
 
@@ -8,11 +10,11 @@ public class Teacher extends Person implements Comparable<Person> {
     private Date _hireDate;
     private Degree _degree;
 
-    public Teacher(String firstName, String lastName, Date dateOfBirth, Nationality nationality, Date hireDate, Degree degree,int pesel){
+    public Teacher(String firstName, String lastName, Date dateOfBirth, Nationality nationality, Date hireDate, Degree degree, String pesel){
         super(firstName, lastName, dateOfBirth, nationality, pesel);
         _hireDate = hireDate;
         _degree = degree;
-
+        TeacherExt.addToPersonHashSet(this);
     }
 
     public Date get_hireDate() {

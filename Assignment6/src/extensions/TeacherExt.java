@@ -9,22 +9,23 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class TeacherExt {
-    public static HashSet<Teacher> teacherHashSet = new HashSet<Teacher>();
+    public static ArrayList<Teacher> _teachersList = new ArrayList<>();
 
-    public void addToPersonHashSet(Teacher e) {
-        teacherHashSet.add(e);
-
+    public static void addToPersonHashSet(Teacher e) {
+        if(!_teachersList.contains(e)) {
+            _teachersList.add(e);
+        }
+       // sortHashSet();
     }
 
-    public void sortHashSet() {
-        List<Teacher> temp = new ArrayList<>(teacherHashSet);
+    public static void sortTeacherList() {
         Collator coll = Collator.getInstance(new Locale("pl","PL"));
-        Collections.sort(temp, coll);
+        Collections.sort(_teachersList, coll);
     }
 
-    public List<Teacher> filterByLocale(Nationality nationality) {
+    public static List<Teacher> filterByLocale(Nationality nationality) {
         Locale temp = new Locale(nationality.get_locale().getLanguage());
-        List<Teacher> p = new ArrayList<>(teacherHashSet);
+        List<Teacher> p = new ArrayList<>(_teachersList);
         return p
                 .stream()
                 .filter(e -> e.get_nationality().get_locale() == nationality.get_locale())

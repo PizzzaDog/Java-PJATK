@@ -1,17 +1,28 @@
 package classes;
 
+import extensions.SubjectExt;
+
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
 public class Subject {
 
-    private String name;
+    private SubjectEnum _name;
     private Department _supervisingDep;
     private Teacher _lecturer;
     private List<Student> _students;
 
-    public String getName() {
-        return name;
+    public Subject(SubjectEnum name, Department supervisingDepartment, Teacher lecturer, List<Student> studentList) {
+        _name = name;
+        _supervisingDep = supervisingDepartment;
+        _lecturer = lecturer;
+        _students = studentList;
+        SubjectExt.addToSubjectList(this);
+    }
+
+    public SubjectEnum getName() {
+        return _name;
     }
 
     public Department get_supervisingDep() {
@@ -31,7 +42,7 @@ public class Subject {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Subject subject = (Subject) o;
-        return Objects.equals(name, subject.name) &&
+        return Objects.equals(_name, subject._name) &&
                 Objects.equals(_supervisingDep, subject._supervisingDep) &&
                 Objects.equals(_lecturer, subject._lecturer) &&
                 Objects.equals(_students, subject._students);
@@ -39,6 +50,6 @@ public class Subject {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, _supervisingDep, _lecturer, _students);
+        return Objects.hash(_name, _supervisingDep, _lecturer, _students);
     }
 }

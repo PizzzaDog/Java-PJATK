@@ -1,13 +1,19 @@
 package extensions;
 
+import classes.Subject;
+
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
 
-    public class SubjectExt {
-        public static HashSet<SubjectExt> depHashSet = new HashSet<SubjectExt>();
+public class SubjectExt {
+        public static List<Subject> _subjectList = new ArrayList<>();
 
-        public void addToPersonHashSet(SubjectExt e) {
-            depHashSet.add(e);
+        public static void addToSubjectList(Subject e) {
+            if(!_subjectList.contains(e)) {
+                _subjectList.add(e);
+            }
         }
     }
 

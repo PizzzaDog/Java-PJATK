@@ -1,5 +1,7 @@
 package classes;
 
+import java.util.Random;
+
 public enum Group {
     _11,
     _12,
@@ -11,4 +13,9 @@ public enum Group {
     _18,
     _19,
     _20;
+
+    public static Group genValue() {
+        Random random = new Random();
+        return values()[random.nextInt(values().length)];
+    }
 }

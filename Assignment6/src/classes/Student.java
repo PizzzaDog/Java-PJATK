@@ -1,5 +1,8 @@
 package classes;
 
+import extensions.StudentExt;
+
+
 import java.util.Date;
 import java.util.Objects;
 
@@ -7,9 +10,10 @@ public class Student extends Person implements Comparable<Person> {
 
     private int _studentID;
 
-    public Student(String firstName, String lastName, Date dateOfBirth, Nationality nationality, int pesel,int studentID){
+    public Student(String firstName, String lastName, Date dateOfBirth, Nationality nationality, String pesel, int studentID){
         super(firstName, lastName, dateOfBirth, nationality, pesel);
         _studentID = studentID;
+        StudentExt.addToPersonHashSet(this);
     }
 
     public int get_studentID() {

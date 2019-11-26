@@ -9,29 +9,30 @@ import java.util.stream.Collectors;
 
 public class PersonExt {
 
-    public static HashSet<Person> personHashSet = new HashSet<Person>();
+    public static List<Person> _personList = new ArrayList<>();
 
-    public void addToPersonHashSet(Person e) {
-        personHashSet.add(e);
-
+    public static void addPersonToList(Person p) {
+        if(!_personList.contains(p)){
+           _personList.add(p);
+        }
+       //sortPersonList();
     }
 
-    public void sortHashSet() {
-        List<Person> temp = new ArrayList<>(personHashSet);
-        Collator coll = Collator.getInstance(new Locale("pl","PL"));
-        Collections.sort(temp, coll);
+    public static void sortPersonList() {
+        Collator coll = Collator.getInstance(new Locale("PL"));
+        Collections.sort(_personList, coll);
     }
 
-    public List<Person> filterByLocale(Nationality nationality) {
-        Locale temp = new Locale(nationality.get_locale().getLanguage());
-        List<Person> p = new ArrayList<>(personHashSet);
+    public static List<Person> filterByLocale(Nationality nationality) {
+        //Locale temp = new Locale(nationality.get_locale().getLanguage());
+        List<Person> p = new ArrayList<>(_personList);
         return p
                 .stream()
                 .filter(e -> e.get_nationality().get_locale() == nationality.get_locale())
                 .collect(Collectors.toList());
     }
 
-    public void sortByLocale(Nationality nationality) {
+    public static void sortByLocale(Nationality nationality) {
         List<Person> filtered = filterByLocale(nationality);
         Collator coll = Collator.getInstance(new Locale(nationality.get_locale().getLanguage(), nationality.get_locale().getCountry()));
         Collections.sort(filtered,coll);

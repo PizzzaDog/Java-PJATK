@@ -1,14 +1,19 @@
 package extensions;
 
 import classes.Department;
-import classes.Person;
-
-import java.util.HashSet;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DepartmentExt {
-    public static HashSet<Department> depHashSet = new HashSet<Department>();
+    public static List<Department> _depList = new ArrayList<Department>();
 
-    public void addToPersonHashSet(Department e) {
-        depHashSet.add(e);
+    public static void addToDepList(Department dep) {
+        if(!_depList.contains(dep)) {
+            _depList.add(dep);
+        }
+    }
+
+    public static List<Department> get_depList() {
+        return _depList;
     }
 }
