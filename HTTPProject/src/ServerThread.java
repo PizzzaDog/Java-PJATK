@@ -4,14 +4,11 @@ import java.net.*;
 
 public class ServerThread extends Thread {
     private Socket socket;
-    private Proxy server;
     private Socket hostSocket;
 
-
-    public ServerThread(Socket socket, Proxy server) {
+    public ServerThread(Socket socket) {
         super();
         this.socket = socket;
-        this.server = server;
     }
 
     public String getHost(byte[] req) {
@@ -19,39 +16,42 @@ public class ServerThread extends Thread {
         String[] arrRequestByLine = requestString.split("\r\n");
         String[] arrByWord = arrRequestByLine[1].split(" ");
         return arrByWord[1];
-
     }
 
     public void run() {
+        InputStream in;
+        OutputStream requestToServer;
+        InputStream responseFromServer;
+        OutputStream responseToClient;
+
 
         try {
             byte[] request = new byte[1024];
-            byte[] response = new byte[102400];
+            byte[] response = new byte[1024];
 
-            InputStream in = new BufferedInputStream(socket.getInputStream());
+            in = new BufferedInputStream(socket.getInputStream());
 
             in.read(request);
+
             String req = new String(request);
-            boolean a = req.contains("Host");
-            if(a) {
+            boolean IsGetRequest = req.contains("GET");
+
+            if(IsGetRequest) {
 
                 String host = getHost(request);
                 System.out.println("HOST " + host);
 
                 hostSocket = new Socket(host, 80);
-                OutputStream requestToServer = new BufferedOutputStream(hostSocket.getOutputStream());
-                InputStream responseFromServer = new BufferedInputStream(hostSocket.getInputStream());
 
-                try {
-                    requestToServer.write(request);
-                    requestToServer.flush();
-                } catch(IOException e) {
-                    System.out.println(e);
-                }
+                requestToServer = new BufferedOutputStream(hostSocket.getOutputStream());
+                responseFromServer = new BufferedInputStream(hostSocket.getInputStream());
+                responseToClient = new BufferedOutputStream(socket.getOutputStream());
 
-                OutputStream responseToClient = new BufferedOutputStream(socket.getOutputStream());
+                requestToServer.write(request);
+                requestToServer.flush();
 
                 int bytesRead;
+
                 while ((bytesRead = responseFromServer.read(response)) != -1) {
                     responseToClient.write(response, 0, bytesRead);
                     responseToClient.flush();
@@ -61,9 +61,7 @@ public class ServerThread extends Thread {
                 responseFromServer.close();
                 responseToClient.close();
                 requestToServer.close();
-
             }
-
 
         } catch (IOException e1) {
             // do nothing

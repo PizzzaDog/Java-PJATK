@@ -31,13 +31,13 @@ public class Proxy {
                 System.exit(-1);
             }
 
-            (new ServerThread(client, this)).start();
+            (new ServerThread(client)).start();
         }
     }
 
     public static void main(String[] args) {
-        //Proxy server = new Proxy(Integer.parseInt(args[0]));
-        Proxy server = new Proxy(5555);
+        Proxy server = new Proxy(Integer.parseInt(args[0]));
+        //Proxy server = new Proxy(5555);
         server.listenSocket();
     }
 }
