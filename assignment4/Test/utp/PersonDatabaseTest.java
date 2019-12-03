@@ -1,7 +1,10 @@
 package utp;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.io.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -38,7 +41,7 @@ class PersonDatabaseTest {
             p3 = new Person("Alice","Lashuk",new SimpleDateFormat("yyyy-MM-dd").parse("2000-12-12"));
             p4 = new Person("John","Lashuk",new SimpleDateFormat("yyyy-MM-dd").parse("2000-12-11"));
             p5 = new Person("John","Lashuk",new SimpleDateFormat("yyyy-MM-dd").parse("2000-12-11"));
-        }catch (ParseException e) {
+        } catch (ParseException e) {
             System.out.println(e);
         }
         test1.add(p3);
@@ -67,14 +70,25 @@ class PersonDatabaseTest {
 
     }
 
+    @Test
+    void serializeAndDeserialize() {
+        PersonDatabase initialDb = new PersonDatabase();
+        PersonDatabase finalDb = null;
+        try {
+            initialDb.serialize(new DataOutputStream(new FileOutputStream(new File("test.txt"))));
+            finalDb = PersonDatabase.deserialize(new DataInputStream(new FileInputStream(new File("test.txt"))));
+            assertEquals(initialDb.getList().size(), finalDb.getList().size());
+            assertEquals(initialDb.getList().get(0).get_firstName(), initialDb.getList().get(0).get_firstName());
+        } catch (Assignment08Exception e) {
+            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 
     @Test
     void sortedByFirstName() {
-        //System.out.println("Sort by first name");
-
         List<Person> sorted = p.sortedByFirstName();
-        System.out.println(sorted.toString());
-        System.out.println(sorted.size());
         for(int i = 0; i < sorted.size(); i++) {
             assertEquals(test1.get(i).get_firstName(), sorted.get(i).get_firstName());
         }
@@ -82,10 +96,7 @@ class PersonDatabaseTest {
 
     @Test
     void sortedByBirthdate() {
-//        System.out.println("sortedByBirthdate");
         List<Person> sorted = p.sortedByBirthdate();
-        System.out.println(sorted.size());
-        //System.out.println(test2.toString());
         for(int i = 0; i < sorted.size(); i++) {
             assertEquals(test2.get(i).get_birthdate() ,sorted.get(i).get_birthdate());
         }
@@ -93,11 +104,7 @@ class PersonDatabaseTest {
 
     @Test
     void sortedBySurnameFirstNameAndBirthdate() {
-//        System.out.println("sortedBySurnameFirstNameAndBirthdate");
         List<Person> sorted = p.sortedBySurnameFirstNameAndBirthdate();
-        System.out.println(sorted.size());
-//        System.out.println(p.toString());
-        System.out.println(sorted.toString());
         for(int i = 0; i < sorted.size(); i++) {
             assertEquals(test3.get(i).get_firstName() ,sorted.get(i).get_firstName());
             assertEquals(test3.get(i).get_surname() , sorted.get(i).get_surname());
@@ -106,15 +113,8 @@ class PersonDatabaseTest {
     }
 
     @Test
-    void bornOnDay(){
+    void bornOnDay() {
         List<Person> date = new ArrayList<>();
-        //System.out.println(.size());
-//        System.out.println("born on day");
-//        try {
-//            System.out.println(p.bornOnDay(new SimpleDateFormat("yyyy-MM-dd").parse("2000-12-12")).toString());
-//        } catch(ParseException e) {
-//            System.out.println(e);
-//        }
         try {
             date = p.bornOnDay(new SimpleDateFormat("yyyy-MM-dd").parse("2000-12-12"));
         } catch(ParseException e) {

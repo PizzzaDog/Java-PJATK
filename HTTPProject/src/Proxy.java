@@ -24,7 +24,6 @@ public class Proxy {
         while(true) {
             try {
                 client = server.accept();
-                //System.out.println("client connected");
             }
             catch (IOException e) {
                 System.out.println("Accept failed");
@@ -37,7 +36,6 @@ public class Proxy {
 
     public static void main(String[] args) {
         Proxy server = new Proxy(Integer.parseInt(args[0]));
-        //Proxy server = new Proxy(5555);
         server.listenSocket();
     }
 }

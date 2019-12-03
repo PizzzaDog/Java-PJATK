@@ -30,17 +30,14 @@ public class ServerThread extends Thread {
             byte[] response = new byte[1024];
 
             in = new BufferedInputStream(socket.getInputStream());
-
             in.read(request);
-
             String req = new String(request);
             boolean IsGetRequest = req.contains("GET");
 
             if(IsGetRequest) {
 
-                String host = getHost(request);
-                System.out.println("HOST " + host);
 
+                String host = getHost(request);
                 hostSocket = new Socket(host, 80);
 
                 requestToServer = new BufferedOutputStream(hostSocket.getOutputStream());

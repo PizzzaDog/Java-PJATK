@@ -5,6 +5,7 @@ import java.nio.file.Paths;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 import java.util.function.BiPredicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -93,17 +94,13 @@ public class FileUtility {
         return pathsWithContent;
     }
 
-    public static boolean checkContent(String file, String content){
+    public static boolean checkContent(String file, String content) {
         StringBuilder sb = new StringBuilder();
 
         try {
             InputStream fileStream = new FileInputStream(file);
-            BufferedReader buf = new BufferedReader(new InputStreamReader(fileStream));
-            String line = buf.readLine();
-            while (line != null) {
-                sb.append(line).append("\n");
-                line = buf.readLine();
-            }
+            Scanner scanner = new Scanner(fileStream);
+            return scanner.findWithinHorizon(content, 0) != null;
         } catch(IOException e) {
             System.out.println(e);
         }

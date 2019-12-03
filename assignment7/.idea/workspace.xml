@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e9e90e0e-86a6-494d-b25f-49eb20c6509b" name="Default Changelist" comment="mess">
       <change beforePath="$PROJECT_DIR$/../HTTPProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../HTTPProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HTTPProject/request.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HTTPProject/src/Proxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HTTPProject/src/Proxy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HTTPProject/src/ServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HTTPProject/src/ServerThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FileUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileUtility.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,8 +20,32 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FileUtility.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="332">
+              <caret line="102" column="64" selection-start-line="102" selection-start-column="64" selection-end-line="102" selection-end-column="64" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/JarUtility.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1027">
+              <caret line="88" column="49" lean-forward="true" selection-start-line="88" selection-start-column="49" selection-end-line="88" selection-end-column="49" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ZipUtility.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="945">
+              <caret line="63" column="5" lean-forward="true" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -41,11 +62,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/JarUtilityTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="29" column="77" lean-forward="true" selection-start-line="29" selection-start-column="77" selection-end-line="29" selection-end-column="77" />
+            <state relative-caret-position="135">
+              <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/ZipUtilityTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
             </state>
           </provider>
         </entry>
@@ -67,12 +97,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/FilePredicate.java" />
-        <option value="$PROJECT_DIR$/src/FileUtility.java" />
         <option value="$PROJECT_DIR$/test/JarUtilityTest.java" />
         <option value="$PROJECT_DIR$/src/JarUtility.java" />
         <option value="$PROJECT_DIR$/test/ZipUtilityTest.java" />
         <option value="$PROJECT_DIR$/src/ZipUtility.java" />
         <option value="$PROJECT_DIR$/test/FileUtilityTest.java" />
+        <option value="$PROJECT_DIR$/src/FileUtility.java" />
       </list>
     </option>
   </component>
@@ -94,6 +124,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -115,8 +147,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -157,12 +187,30 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.FileUtilityTest">
+  <component name="RunManager" selected="JUnit.All in assignment7">
+    <configuration name="All in assignment7" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="assignment7" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="FileUtilityTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="assignment7" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="FileUtilityTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileUtilityTest.fileWithContent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="assignment7" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="FileUtilityTest" />
+      <option name="METHOD_NAME" value="fileWithContent" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -185,33 +233,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ZipUtilityTest.fileWithContentPar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="assignment7" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ZipUtilityTest" />
-      <option name="METHOD_NAME" value="fileWithContentPar" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ZipUtilityTest.findInZipPar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="assignment7" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ZipUtilityTest" />
-      <option name="METHOD_NAME" value="findInZipPar" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in assignment7" />
+        <item itemvalue="JUnit.FileUtilityTest.fileWithContent" />
         <item itemvalue="JUnit.FileUtilityTest" />
         <item itemvalue="JUnit.JarUtilityTest" />
         <item itemvalue="JUnit.ZipUtilityTest" />
-        <item itemvalue="JUnit.ZipUtilityTest.fileWithContentPar" />
-        <item itemvalue="JUnit.ZipUtilityTest.findInZipPar" />
       </list>
     </recent_temporary>
   </component>
@@ -230,6 +258,7 @@
       <workItem from="1574619161981" duration="4199000" />
       <workItem from="1574780386597" duration="6698000" />
       <workItem from="1574851998401" duration="462000" />
+      <workItem from="1574871992025" duration="2111000" />
     </task>
     <task id="LOCAL-00001" summary="mess">
       <created>1574619373698</created>
@@ -242,12 +271,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ZipUtilityTest_findInZipPar - 2019.11.26 at 18h 13m 35s.xml">
-      <configuration name="ZipUtilityTest.findInZipPar" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ZipUtilityTest_findInZipPar - 2019.11.26 at 18h 13m 49s.xml">
-      <configuration name="ZipUtilityTest.findInZipPar" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ZipUtilityTest_fileWithContentPar - 2019.11.26 at 18h 14m 52s.xml">
       <configuration name="ZipUtilityTest.fileWithContentPar" configurationId="JUnit" />
     </history-entry>
@@ -272,9 +295,15 @@
     <history-entry file="FileUtilityTest - 2019.11.26 at 18h 21m 32s.xml">
       <configuration name="FileUtilityTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="FileUtilityTest_fileWithContent - 2019.11.27 at 18h 08m 07s.xml">
+      <configuration name="FileUtilityTest.fileWithContent" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_assignment7 - 2019.11.27 at 18h 09m 38s.xml">
+      <configuration name="All in assignment7" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21829000" />
+    <option name="totallyTimeSpent" value="23940000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -287,9 +316,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2639485" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26752505" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -376,20 +404,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ZipUtility.java">
+    <entry file="file://$PROJECT_DIR$/test/JarUtilityTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="63" column="5" lean-forward="true" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="135">
+          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/JarUtility.java">
+    <entry file="file://$PROJECT_DIR$/src/ZipUtility.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="15" selection-end-column="76" />
+        <state relative-caret-position="945">
+          <caret line="63" column="5" lean-forward="true" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -398,8 +423,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FileUtility.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="332">
+          <caret line="102" column="64" selection-start-line="102" selection-start-column="64" selection-end-line="102" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -413,10 +438,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/JarUtilityTest.java">
+    <entry file="file://$PROJECT_DIR$/src/JarUtility.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="29" column="77" lean-forward="true" selection-start-line="29" selection-start-column="77" selection-end-line="29" selection-end-column="77" />
+        <state relative-caret-position="1027">
+          <caret line="88" column="49" lean-forward="true" selection-start-line="88" selection-start-column="49" selection-end-line="88" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,5 +1,7 @@
 package utp;
 
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.util.Date;
 
 public class Person implements Comparable<Person> {
@@ -13,6 +15,40 @@ public class Person implements Comparable<Person> {
         _surname = surname;
         _birthdate = birthdate;
     }
+
+    // assignment 8
+    public void serialize(DataOutputStream output) throws Assignment08Exception {
+        try {
+            output.writeUTF(get_firstName());
+            output.writeUTF(get_surname());
+            output.writeLong(get_birthdate().getTime());
+        } catch (Throwable exception) {
+            throw new Assignment08Exception(exception.getMessage(), exception.getCause());
+        }
+
+        // serialize birth date with getTime() method
+        // encapsulate IOException in Assignment08Exception
+    }
+
+    public static Person deserialize(DataInputStream input) throws Assignment08Exception {
+        String name;
+        String surname;
+        long g;
+        try {
+            if(input.available() > 0) {
+                name = input.readUTF();
+                surname = input.readUTF();
+                g = input.readLong();
+            } else {
+                return null;
+            }
+
+        } catch (Throwable exception) {
+            throw new Assignment08Exception(exception.getMessage(), exception.getCause());
+        }
+        return new Person(name,surname,new Date(g));
+    }
+
 
     public String get_firstName() {
         return _firstName;
@@ -48,5 +84,4 @@ public class Person implements Comparable<Person> {
     public String toString(){
         return _firstName + " " + _surname + " " +_birthdate;
     }
-
 }
