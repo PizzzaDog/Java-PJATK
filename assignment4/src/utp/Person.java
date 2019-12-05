@@ -42,7 +42,6 @@ public class Person implements Comparable<Person> {
             } else {
                 return null;
             }
-
         } catch (Throwable exception) {
             throw new Assignment08Exception(exception.getMessage(), exception.getCause());
         }
