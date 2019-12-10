@@ -25,9 +25,6 @@ public class Person implements Comparable<Person> {
         } catch (Throwable exception) {
             throw new Assignment08Exception(exception.getMessage(), exception.getCause());
         }
-
-        // serialize birth date with getTime() method
-        // encapsulate IOException in Assignment08Exception
     }
 
     public static Person deserialize(DataInputStream input) throws Assignment08Exception {

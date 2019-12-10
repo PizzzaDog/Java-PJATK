@@ -13,10 +13,13 @@ public final class PersonDatabase {
     private List<Person> tmp;
     Map<Date,List<Person>> map = null;
     public PersonDatabase() {
-        tmp = InputParser.parse(new File("/Users/alice/Coding/Java/assignment4/src/utp/people.txt"));
+       // tmp = InputParser.parse(new File("/Users/alice/Coding/Java/assignment4/src/utp/people.txt"));
     }
 
-    // assignment 8 - factory method based on deserialization
+    public PersonDatabase(String s) {
+        tmp = InputParser.parse(new File(s));
+    }
+
     public static PersonDatabase deserialize(DataInputStream input) throws Assignment08Exception {
         PersonDatabase database = new PersonDatabase();
         List<Person> desList = new ArrayList<>();
@@ -38,7 +41,6 @@ public final class PersonDatabase {
         this.tmp = tmp;
     }
 
-    // assignment 8
     public void serialize(DataOutputStream output) throws Assignment08Exception {
         try {
             tmp.forEach(e -> {

@@ -22,7 +22,7 @@ class PersonDatabaseTest {
     @BeforeEach
     void before(){
 
-        p = new PersonDatabase();
+        p = new PersonDatabase("/Users/alice/Coding/Java/assignment4/src/utp/people.txt");
 
         test1 = new ArrayList<>();
         test2 = new ArrayList<>();
@@ -72,7 +72,7 @@ class PersonDatabaseTest {
 
     @Test
     void serializeAndDeserialize() {
-        PersonDatabase initialDb = new PersonDatabase();
+        PersonDatabase initialDb = new PersonDatabase("/Users/alice/Coding/Java/assignment4/src/utp/people.txt");
         PersonDatabase finalDb = null;
         try {
             initialDb.serialize(new DataOutputStream(new FileOutputStream(new File("test.txt"))));
