@@ -26,7 +26,7 @@ public class Pesel {
         return check == num[10];
     }
 
-    public static Date getDate(String pesel) {
+    private static Date getDate(String pesel) {
         String fullDate = pesel.substring(0,6);
         String year = fullDate.substring(0,2);
         int fullYear = 0;
@@ -37,7 +37,7 @@ public class Pesel {
             fullYear = Integer.parseInt("19" + year);
             month = monthValue;
         } else if(monthValue <= 32) {
-            fullYear = Integer.parseInt("20"+year);
+            fullYear = Integer.parseInt("20" + year);
             month = monthValue - 20;
         } else if(monthValue <= 52) {
             fullYear = Integer.parseInt("21" + year);
@@ -62,7 +62,7 @@ public class Pesel {
         return d;
     }
 
-    public static Sex getSex(String pesel) {
+    private static Sex getSex(String pesel) {
         int sexValue = Integer.parseInt(pesel.substring(9,10));
         if(sexValue % 2 == 0){
             return Sex.FEMALE;
